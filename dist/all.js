@@ -1,9 +1,11 @@
 'use strict';
 
-var jssc = document.createElement('div'),
-    jsscModal = document.createElement('div'),
-    jsscContentWrapper = document.createElement('div');
+var jssc = document.createElement('div');
+jssc.classList.add('jssc');
 
+jssc.insertAdjacentHTML('beforeEnd', '<div class="jssc__modal">' + '<div class="jssc__modal-close">test</div>' + '</div>');
+
+document.body.appendChild(jssc);
 function jsscModalToggle(steps, separator) {
 	if (steps) {
 		steps = steps.split(separator);
@@ -12,8 +14,4 @@ function jsscModalToggle(steps, separator) {
 		document.querySelector('.jssc').style.visibility = 'hidden';
 	}
 }
-
-console.log(document.querySelector('#tmpl'));
-
-document.querySelector('#tmpl').createShadowRoot();
 //# sourceMappingURL=all.js.map
