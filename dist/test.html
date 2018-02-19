@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSSC test</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		body, html {
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		button {
+			font-size: 100px;
+			border: solid 2px black;
+			cursor: pointer;
+		}
+		p {
+			-ms-user-select: none; 
+		    -moz-user-select: none; 
+		    -webkit-user-select: none; 
+		    user-select: none; 
+		}
+	</style>
+</head>
+<body>
+	<p>This html page need for only testing functional of framework.</p>
+
+	<template id="tmpl">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+	</template>
+
+	<button>PUSH</button>
+
+<script src="all.js"></script>
+</body>
+</html>
