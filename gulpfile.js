@@ -8,12 +8,14 @@ const cssSorting = require('postcss-sorting');
 const cssNext = require('postcss-cssnext')
 
 var paths = {
-	js: 'dev/**/*.js',
+	js: ['dev/templates.js', 'dev/elements.js', 'dev/functions.js', 'dev/script.js',
+	'dev/**/*.js'],
+	
 	css: 'dev/**/*.pcss'
 };
 
 gulp.task('js', function() {
-	gulp.src('dev/**/*.js')
+	gulp.src(paths.js)
 	 .pipe(sourcemaps.init())
 	 .pipe(concat('all.js'))
 	 .pipe(babel({
@@ -33,7 +35,7 @@ gulp.task('css', function() {
      	}
      })
 	]
-	gulp.src('dev/**/*.pcss')
+	gulp.src(paths.css)
 	 .pipe(postcss(plugins))
 	 .pipe(concat('style.css'))
 	 .pipe(gulp.dest('dist'))

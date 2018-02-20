@@ -10,10 +10,41 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	display: none;
 
 	& .jssc__modal {
 		width: 60%;
 		height: 50%;
-		background-color: gold;
+		background-color: white;
+		position: relative;
+	}
+
+	& .jssc__modal-close {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 25px;
+		right: 35px;
+		cursor: pointer;
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	& .jssc__content {
+		width: 80%;
+		height: auto;
+		margin: auto;
+	}
+
+	& .jssc__hat {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: solid 2px gray;
+		padding: 25px 0;
+	}
+
+	& .jssc__title {
+		color: #566269;
 	}
 }
