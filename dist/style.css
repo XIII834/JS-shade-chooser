@@ -1,6 +1,7 @@
 .jssc {
 	width: 100vw;
 	height: 100vh;
+	color: #566269;
 	max-height: 100vh;
 	max-width: 100vw;
 	background-color: rgba(255, 255, 255, .7);
@@ -47,9 +48,51 @@
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	border-bottom: solid 2px gray;
 	padding: 25px 0;
 }
-.jssc .jssc__title {
-	color: #566269;
+.jssc .jssc__type-link {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+.jssc .jssc__type-link:hover {
+	opacity: 0.8;
+}
+.jssc .jssc__type-link-img {
+	width: 45px;
+	height: 45px;
+	margin-left: 10px;
+	border-radius: 100px;
+}
+.jssc .jssc__type-link-img_temp {
+	background-color: #FBF261;
+}
+.jssc .jssc__type-link-img_wave {
+	background-color: #F93B1C;
+}
+.jssc .jssc__color-palette {
+	width: 100%;
+	height: 100px;
+	margin-top: 100px;
+}
+.jssc .jssc__color-palette_temp {
+	background-color: #FBF261;
+}
+.jssc .jssc__color-palette_wave {
+	background-color: #F93B1C;
 }

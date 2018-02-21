@@ -9,13 +9,17 @@ function jsscContentToggle(isCurrentTemp) {
 	}
 }
 
-function jsscToggle(isJsscActive, arr) {
+function jsscToggle(isJsscActive, strArr, divider) {
 
-	if (arr !== undefined) {
+	if (strArr !== undefined) {
+		divider = (divider === undefined) ? ',' : divider;
 		stepsArr = [];
-		arr.forEach((elem) => {
-			stepsArr.push(elem);
-		});
+		strArr = strArr.split(divider);
+		for (let i = 0; i < strArr.length; i++) {
+			stepsArr.push(strArr[i]);
+		}
+	} else {
+		stepsArr = [100, 200, 300, 400, 500, 600];
 	}
 
 	if (isJsscActive) {
