@@ -17,7 +17,8 @@
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	display: none
+	display: none;
+	font-family: Arial
 }
 .jssc .jssc__modal {
 	width: 60%;
@@ -83,16 +84,43 @@
 	background-color: #FBF261;
 }
 .jssc .jssc__type-link-img_wave {
-	background-color: #F93B1C;
+	/* background-color: #F93B1C; */
+	/* background: linear-gradient(45deg, #000 0%, #7100C4 44%, #004DFF 48.5%, #00B8D9 50%, #00C43A 56.5%, #FFFF00 59%, #FF8C00 62.5%, #FF0000 74%, #000 100%); */
+	background: linear-gradient(-45deg, #000, #7100C4, #004DFF, #00B8D9, #00C43A, #FFFF00, #FF8C00, #FF0000, #000);
 }
 .jssc .jssc__color-palette {
 	width: 100%;
 	height: 100px;
 	margin-top: 100px;
+	border-top: solid 2px gray;
+	border-bottom: solid 2px gray;
 }
 .jssc .jssc__color-palette_temp {
 	background-color: #FBF261;
 }
 .jssc .jssc__color-palette_wave {
-	background-color: #F93B1C;
+	/* background-color: #F93B1C; */
+	/* background: linear-gradient(90deg, #000 0%, #7100C4 44%, #004DFF 48.5%, #00B8D9 50%, #00C43A 56.5%, #FFFF00 59%, #FF8C00 62.5%, #FF0000 74%, #000 100%); */
+	background: -webkit-gradient(linear, left top, right top, from(#000), color-stop(#7100C4), color-stop(#004DFF), color-stop(#00B8D9), color-stop(#00C43A), color-stop(#FFFF00), color-stop(#FF8C00), color-stop(#FF0000), to(#000));
+	background: linear-gradient(90deg, #000, #7100C4, #004DFF, #00B8D9, #00C43A, #FFFF00, #FF8C00, #FF0000, #000);
+}
+.jssc .jssc__marking {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	font-size: 0.7vw;
+	font-weight: bold;
+	padding: 10px 0;
+}
+.jssc .jssc__temp-sectors {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	text-transform: uppercase;
 }

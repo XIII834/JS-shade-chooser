@@ -57,7 +57,17 @@ let jsscWaveTemplate = '' +
 		'<div class="jssc__right-arrow"></div>' +
 	'</div>' +
 '</div>' +
-'<div class="jssc__marking"></div>' +
+'<div class="jssc__marking">' + 
+	'<span>УФ</span>' +
+	'<span>380-440нм</span>' +
+	'<span>440-485нм</span>' +
+	'<span>485-500нм</span>' +
+	'<span>500-565нм</span>' +
+	'<span>565-590нм</span>' +
+	'<span>590-625нм</span>' +
+	'<span>625-740нм</span>' +
+	'<span>ИК</span>' +
+'</div>' +
 '<div class="jssc__input">' +
 	'<input type="number" name="jssc__input">' +
 '</div>';
