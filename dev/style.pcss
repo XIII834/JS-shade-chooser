@@ -14,6 +14,10 @@
 	display: none;
 	font-family: Arial;
 
+	& span {
+		user-select: none;
+	}
+
 	& .jssc__modal {
 		width: 60%;
 		height: 50%;
@@ -52,7 +56,6 @@
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
-		user-select: none;
 		&:hover {
 			opacity: 0.8;
 		}
@@ -81,6 +84,7 @@
 		margin-top: 100px;
 		border-top: solid 2px gray;
 		border-bottom: solid 2px gray;
+		position: relative;
 	}
 
 	& .jssc__color-palette_temp {
@@ -91,6 +95,90 @@
 		/* background-color: #F93B1C; */
 		/* background: linear-gradient(90deg, #000 0%, #7100C4 44%, #004DFF 48.5%, #00B8D9 50%, #00C43A 56.5%, #FFFF00 59%, #FF8C00 62.5%, #FF0000 74%, #000 100%); */
 		background: linear-gradient(90deg, #000, #7100C4, #004DFF, #00B8D9, #00C43A, #FFFF00, #FF8C00, #FF0000, #000);
+	}
+
+	& .jssc__carriage-wrapper {
+		width: 150px;
+		height: 100px;
+		position: absolute;
+		top: -90%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	& .jssc__count {
+		width: 100%;
+		text-align: center;
+		font-weight: bold;
+		color: gray;
+	}
+
+	& .jssc__left-arrow-wrapper,
+	& .jssc__right-arrow-wrapper {
+		width: 24px;
+		height: 40px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
+	& .jssc__left-arrow,
+	& .jssc__right-arrow,
+	& .jssc__bottom-arrow {
+		width: 0;
+		height: 0;
+	}
+
+	& .jssc__right-arrow-wrapper {
+		align-items: flex-end;
+	}
+
+	& .jssc__left-arrow {
+		cursor: pointer;
+		border-top: solid 12px transparent;
+		border-right: solid 24px rgba(150, 150, 150, 1);
+		border-left: 0;
+		border-bottom: solid 12px transparent;
+	}
+
+	& .jssc__right-arrow {
+		cursor: pointer;
+		border-top: solid 12px transparent;
+		border-right: 0;
+		border-left: solid 24px rgba(150, 150, 150, 1);;
+		border-bottom: solid 12px transparent;
+	}
+
+	& .jssc__carriage {
+		cursor: grab;
+		border: solid 5px rgba(0, 0, 0, 0.8);
+		width: 70px;
+		height: 70px;
+		border-radius: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 40px;
+		color: black;
+		font-weight: bold;
+		&:active {
+			cursor: grabbing;
+		}
+	}
+
+	& .jssc__bottom-arrow-wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	& .jssc__bottom-arrow {
+		border-top: solid 16px rgba(0, 0, 0, 0.5);
+		border-right: solid 8px transparent;
+		border-left: solid 8px transparent;
+		border-bottom: 0;
+		margin-top: -2px;
 	}
 
 	& .jssc__marking {
@@ -105,5 +193,21 @@
 		display: flex;
 		justify-content: space-between;
 		text-transform: uppercase;
+		font-weight: bold;
+		color: #a2a9ad;
+	}
+
+	& .jssc__input {
+		margin: 50px 0 0 0;
+	}
+
+	& .jssc__input [name="jssc__input"] {
+		border: none;
+		border-radius: 7px;
+		width: auto;
+		padding: 10px;
+		font-size: 20px;
+		background-color: #AEBD9D;
+		text-align: center;
 	}
 }

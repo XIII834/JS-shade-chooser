@@ -16,7 +16,7 @@ let baseJsscTemplate = '' +
 
 let jsscTempTemplate = '' +
 '<div class="jssc__hat">' +
-	'<div class="jssc__title">Температура, К</div>' +
+	'<div class="jssc__title"><span>Температура, К</span></div>' +
 	'<div class="jssc__type-link">' + 
 		'<span>Длина волны, λ</span>' +
 		'<div class="jssc__type-link-img jssc__type-link-img_wave"></div>' +
@@ -24,10 +24,17 @@ let jsscTempTemplate = '' +
 '</div>' +
 '<div class="jssc__color-palette jssc__color-palette_temp">' +
 	'<div class="jssc__carriage-wrapper">' +
-		'<div class="jssc__count"></div>' +
-		'<div class="jssc__left-arrow"></div>' +
+		'<div class="jssc__count"><span>400</span></div>' +
+		'<div class="jssc__left-arrow-wrapper">' + 
+			'<div class="jssc__left-arrow"></div>' +
+		'</div>' +
 		'<div class="jssc__carriage"></div>' +
-		'<div class="jssc__right-arrow"></div>' +
+		'<div class="jssc__right-arrow-wrapper">' + 
+			'<div class="jssc__right-arrow"></div>' +
+		'</div>' +
+		'<div class="jssc__bottom-arrow-wrapper">' +
+			'<div class="jssc__bottom-arrow"></div>' +
+		'</div>' +
 	'</div>' +
 '</div>' +
 '<div class="jssc__marking"></div>' +
@@ -38,12 +45,12 @@ let jsscTempTemplate = '' +
 	'<span>небо</span>' +
 '</div>' +
 '<div class="jssc__input">' +
-	'<input type="number" name="jssc__input">' +
+	'<input type="text" name="jssc__input">' +
 '</div>';
 
 let jsscWaveTemplate = '' +
 '<div class="jssc__hat">' +
-	'<div class="jssc__title">Длина волны, λ</div>' +
+	'<div class="jssc__title"><span>Длина волны, λ</span></div>' +
 	'<div class="jssc__type-link">' + 
 		'<span>Температура, К</span>' +
 		'<div class="jssc__type-link-img jssc__type-link-img_temp"></div>' +
@@ -51,10 +58,17 @@ let jsscWaveTemplate = '' +
 '</div>' +
 '<div class="jssc__color-palette jssc__color-palette_wave">' +
 	'<div class="jssc__carriage-wrapper">' +
-		'<div class="jssc__count"></div>' +
-		'<div class="jssc__left-arrow"></div>' +
-		'<div class="jssc__carriage"></div>' +
-		'<div class="jssc__right-arrow"></div>' +
+		'<div class="jssc__count"><span>380</span></div>' +
+		'<div class="jssc__left-arrow-wrapper">' + 
+			'<div class="jssc__left-arrow"></div>' +
+		'</div>' +
+		'<div class="jssc__carriage"><span>ИК</span></div>' +
+		'<div class="jssc__right-arrow-wrapper">' + 
+			'<div class="jssc__right-arrow"></div>' +
+		'</div>' +
+		'<div class="jssc__bottom-arrow-wrapper">' +
+			'<div class="jssc__bottom-arrow"></div>' +
+		'</div>' +
 	'</div>' +
 '</div>' +
 '<div class="jssc__marking">' + 
@@ -69,5 +83,5 @@ let jsscWaveTemplate = '' +
 	'<span>ИК</span>' +
 '</div>' +
 '<div class="jssc__input">' +
-	'<input type="number" name="jssc__input">' +
+	'<input type="text" name="jssc__input">' +
 '</div>';
