@@ -9,8 +9,9 @@ var jssc = document.createElement('div');
 jssc.insertAdjacentHTML('afterBegin', baseJsscTemplate);
 jssc.classList.add('jssc');
 
-var stepsArr = new Array(),
-    paletteWidth = void 0,
+var stepsObj = {};
+
+var paletteWidth = void 0,
     carriageWidth = void 0,
     paletteBlockWidth = void 0,
     minLeft = void 0,
@@ -44,19 +45,9 @@ function jsscContentToggle(isCurrentTemp) {
 	}
 }
 
-function jsscToggle(isJsscActive, strArr) {
+function jsscToggle(strObj) {
 
-	if (strArr !== undefined) {
-
-		stepsArr = validValusConverter(strArr);
-	} else {
-
-		stepsArr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
-	}
-
-	if (isJsscActive) {
-		jssc.style.display = 'none';
-	} else {
+	if (getComputedStyle(jssc).display === 'none') {
 		jssc.style.display = 'flex';
 
 		if (!paletteWidth) {
@@ -73,6 +64,24 @@ function jsscToggle(isJsscActive, strArr) {
 		}
 
 		console.log(getRange(0));
+	} else {
+		jssc.style.display = 'none';
+	}
+
+	if (strObj.wave !== undefined) {
+
+		stepsObj.wave = validValusConverter(strObj.wave);
+	} else {
+
+		stepsObj.wave = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+	}
+
+	if (strObj.temp !== undefined) {
+
+		stepsObj.temp = validValusConverter(strObj.temp);
+	} else {
+
+		stepsObj.temp = [2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100];
 	}
 }
 

@@ -2,8 +2,9 @@ let jssc = document.createElement('div');
 	jssc.insertAdjacentHTML('afterBegin', baseJsscTemplate);
 	jssc.classList.add('jssc');
 
-let stepsArr = new Array(), paletteWidth, carriageWidth,
-			   paletteBlockWidth, minLeft, maxLeft;
+let stepsObj = {};
+
+let paletteWidth, carriageWidth, paletteBlockWidth, minLeft, maxLeft;
 
 let wavesRanges = [0, 410, 463, 493, 533, 578, 608, 683, 1000];
 
