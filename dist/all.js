@@ -69,7 +69,7 @@ function jsscToggle(isJsscActive, strArr) {
 			minLeft = -Math.round(carriageWidth / 2);
 			maxLeft = paletteWidth - Math.round(carriageWidth / 2);
 
-			waveCarriage.style.left = getLeft(0) + 'px';
+			waveCarriage.style.left = getLeft(800) + 'px';
 		}
 
 		console.log(getRange(0));
