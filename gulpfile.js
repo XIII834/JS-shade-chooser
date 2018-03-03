@@ -5,7 +5,8 @@ const concat = require('gulp-concat');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssSorting = require('postcss-sorting');
-const cssNext = require('postcss-cssnext')
+const cssNext = require('postcss-cssnext');
+const plumber = require('gulp-plumber');
 
 var paths = {
 	js: ['dev/templates.js', 'dev/elements.js', 'dev/functions.js', 'dev/script.js',
@@ -16,6 +17,7 @@ var paths = {
 
 gulp.task('js', function() {
 	gulp.src(paths.js)
+	 .pipe(plumber())
 	 .pipe(sourcemaps.init())
 	 .pipe(concat('all.js'))
 	 .pipe(babel({
@@ -36,6 +38,7 @@ gulp.task('css', function() {
      })
 	]
 	gulp.src(paths.css)
+	 .pipe(plumber())
 	 .pipe(postcss(plugins))
 	 .pipe(concat('style.css'))
 	 .pipe(gulp.dest('dist'))

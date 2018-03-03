@@ -105,6 +105,9 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		&:active {
+			cursor: none;
+		}
 	}
 
 	& .jssc__count {
@@ -121,6 +124,9 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
+		&:active {
+			cursor: none;
+		}
 	}
 
 	& .jssc__left-arrow,
@@ -160,10 +166,10 @@
 		justify-content: center;
 		align-items: center;
 		font-size: 40px;
-		color: black;
+		color: white;
 		font-weight: bold;
 		&:active {
-			cursor: grabbing;
+			cursor: none;
 		}
 	}
 

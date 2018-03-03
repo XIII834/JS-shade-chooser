@@ -58,11 +58,11 @@ let jsscWaveTemplate = '' +
 '</div>' +
 '<div class="jssc__color-palette jssc__color-palette_wave">' +
 	'<div class="jssc__carriage-wrapper">' +
-		'<div class="jssc__count"><span>380</span></div>' +
+		'<div class="jssc__count"><span></span></div>' +
 		'<div class="jssc__left-arrow-wrapper">' + 
 			'<div class="jssc__left-arrow"></div>' +
 		'</div>' +
-		'<div class="jssc__carriage"><span>ИК</span></div>' +
+		'<div class="jssc__carriage"><span></span></div>' +
 		'<div class="jssc__right-arrow-wrapper">' + 
 			'<div class="jssc__right-arrow"></div>' +
 		'</div>' +

@@ -119,7 +119,10 @@
 	    flex-wrap: wrap;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	        justify-content: space-between
+}
+.jssc .jssc__carriage-wrapper:active {
+	cursor: none;
 }
 .jssc .jssc__count {
 	width: 100%;
@@ -140,7 +143,10 @@
 	        flex-direction: column;
 	-webkit-box-pack: end;
 	    -ms-flex-pack: end;
-	        justify-content: flex-end;
+	        justify-content: flex-end
+}
+.jssc .jssc__left-arrow-wrapper:active, .jssc .jssc__right-arrow-wrapper:active {
+	cursor: none;
 }
 .jssc .jssc__left-arrow,
 	.jssc .jssc__right-arrow,
@@ -184,12 +190,11 @@
 	    -ms-flex-align: center;
 	        align-items: center;
 	font-size: 40px;
-	color: black;
+	color: white;
 	font-weight: bold
 }
 .jssc .jssc__carriage:active {
-	cursor: -webkit-grabbing;
-	cursor: grabbing;
+	cursor: none;
 }
 .jssc .jssc__bottom-arrow-wrapper {
 	width: 100%;

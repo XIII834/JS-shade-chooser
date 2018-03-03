@@ -2,10 +2,13 @@ let jssc = document.createElement('div');
 	jssc.insertAdjacentHTML('afterBegin', baseJsscTemplate);
 	jssc.classList.add('jssc');
 
-let stepsArr = new Array(), paletteWidth, carriageWidth,
-			   paletteBlockWidth, minLeft, maxLeft;
+let stepsObj = {};
 
-let wavesRanges = [0, 410, 463, 493, 533, 578, 608, 683, 1000];
+let paletteWidth, carriageWidth, paletteBlockWidth, minLeft, maxLeft,
+	paletteFullWidth, cursorPosition = null;
+
+let wavesRanges = [0, 410, 463, 493, 533, 578, 608, 683, 1000],
+	gradientRanges = ['000000', '7100C4', '004DFF', '00B8D9', '00C43A', 'FFFF00', 'FF8C00', 'FF0000', '000000'];
 
 let jsscContent = jssc.querySelector('.jssc__content');
 
