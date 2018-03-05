@@ -26,7 +26,7 @@ function jsscToggle(strObj) {
 		stepsObj.temp = validValuesConverter(strObj.temp);
 	} else {
 
-		stepsObj.temp = [2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100];
+		stepsObj.temp = validValuesConverter('2200-20000');
 	}
 
 	if (getComputedStyle(jssc).display === 'none') {

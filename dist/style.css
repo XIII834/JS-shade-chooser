@@ -58,7 +58,7 @@
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	border-bottom: solid 2px gray;
+	border-bottom: solid 1px gray;
 	padding: 25px 0;
 }
 .jssc .jssc__type-link {
@@ -83,7 +83,8 @@
 	border-radius: 100px;
 }
 .jssc .jssc__type-link-img_temp {
-	background-color: #FBF261;
+	/* background-color: #FBF261; */
+	background: linear-gradient(-45deg, #DC841A, #F7C16B, #FFECC1, #FFFAEA, #E4F5FD, #92B9D6, #5D90BF, #0000A2)
 }
 .jssc .jssc__type-link-img_wave {
 	/* background-color: #F93B1C; */
@@ -99,7 +100,9 @@
 	position: relative;
 }
 .jssc .jssc__color-palette_temp {
-	background-color: #FBF261;
+	/* background-color: #FBF261; */
+	background: -webkit-gradient(linear, left top, right top, from(#DC841A), color-stop(#F7C16B), color-stop(#FFECC1), color-stop(#FFFAEA), color-stop(#E4F5FD), color-stop(#92B9D6), color-stop(#5D90BF), to(#0000A2));
+	background: linear-gradient(90deg, #DC841A, #F7C16B, #FFECC1, #FFFAEA, #E4F5FD, #92B9D6, #5D90BF, #0000A2);
 }
 .jssc .jssc__color-palette_wave {
 	/* background-color: #F93B1C; */
@@ -233,6 +236,8 @@
 	text-transform: uppercase;
 	font-weight: bold;
 	color: #a2a9ad;
+	border-top: solid 1px gray;
+	padding-top: 15px;
 }
 .jssc .jssc__input {
 	margin: 50px 0 0 0;

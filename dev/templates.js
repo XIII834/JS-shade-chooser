@@ -37,7 +37,16 @@ let jsscTempTemplate = '' +
 		'</div>' +
 	'</div>' +
 '</div>' +
-'<div class="jssc__marking"></div>' +
+'<div class="jssc__marking">' + 
+	'<span>2200к</span>' +
+	'<span>2700-3000к</span>' +
+	'<span>4000-4500к</span>' +
+	'<span>4800к</span>' +
+	'<span>5000-6000к</span>' +
+	'<span>7000-7500к</span>' +
+	'<span>10000к</span>' +
+	'<span>20000к</span>' +
+'</div>' +
 '<div class="jssc__temp-sectors">' + 
 	'<span>свеча</span>' +
 	'<span>лампа</span>' +
