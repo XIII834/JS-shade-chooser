@@ -13,6 +13,7 @@
 	align-items: center;
 	display: none;
 	font-family: Arial;
+	z-index: 100;
 
 	& span {
 		user-select: none;
@@ -20,7 +21,7 @@
 
 	& .jssc__modal {
 		width: 60%;
-		height: 50%;
+		height: auto;
 		background-color: white;
 		position: relative;
 	}
@@ -209,15 +210,32 @@
 
 	& .jssc__input {
 		margin: 50px 0 0 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 40px;
 	}
 
 	& .jssc__input [name="jssc__input"] {
 		border: none;
-		border-radius: 7px;
-		width: auto;
+		border-radius: 0 7px 7px 0;
+		width: 20%;
 		padding: 10px;
 		font-size: 20px;
 		background-color: #AEBD9D;
 		text-align: center;
+	}
+
+	& .jssc__input-error {
+		color: #aebd9d;
+		border: solid 1px #aebd9d;
+		padding: 10px;
+		border-radius: 7px 0 0 7px;
+		font-weight: bold;
+		width: 75%;
+		&.jssc__input-error_active {
+			border-color: red;
+			color: red;
+		}
 	}
 }

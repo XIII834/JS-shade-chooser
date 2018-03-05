@@ -4,11 +4,13 @@ let jssc = document.createElement('div');
 
 let stepsObj = {};
 
-let paletteWidth, carriageWidth, paletteBlockWidth, minLeft, maxLeft,
-	paletteFullWidth, cursorPosition = null;
+let paletteWidth, carriageWidth, paletteWaveBlockWidth,
+	paletteTempBlockWidth, paletteFullWidth, cursorPosition = null;
 
 let wavesRanges = [0, 410, 463, 493, 533, 578, 608, 683, 1000],
-	gradientRanges = ['000000', '7100C4', '004DFF', '00B8D9', '00C43A', 'FFFF00', 'FF8C00', 'FF0000', '000000'];
+	gradientWaveRanges = ['000000', '7100C4', '004DFF', '00B8D9', '00C43A', 'FFFF00', 'FF8C00', 'FF0000', '000000'],
+	tempsRanges = [2200, 2850, 4250, 4800, 5500, 7250, 10000, 20000],
+	gradientTempRanges = ['DC841A', 'F7C16B', 'FFECC1', 'FFFAEA', 'E4F5FD', '92B9D6', '5D90BF', '0000A2'];
 
 let jsscContent = jssc.querySelector('.jssc__content');
 

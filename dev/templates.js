@@ -54,7 +54,8 @@ let jsscTempTemplate = '' +
 	'<span>небо</span>' +
 '</div>' +
 '<div class="jssc__input">' +
-	'<input type="text" name="jssc__input">' +
+	'<input type="text" name="jssc__input" placeholder="Поле для ввода">' +
+	'<div class="jssc__input-error">Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.</div>' +
 '</div>';
 
 let jsscWaveTemplate = '' +
@@ -92,5 +93,6 @@ let jsscWaveTemplate = '' +
 	'<span>ИК</span>' +
 '</div>' +
 '<div class="jssc__input">' +
-	'<input type="text" name="jssc__input">' +
+	'<input type="text" name="jssc__input" placeholder="Поле для ввода">' +
+	'<div class="jssc__input-error">Введите значение длины волны (в нм) вручную, или используйте селектор цвета.</div>' +
 '</div>';
