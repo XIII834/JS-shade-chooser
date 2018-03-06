@@ -1,6 +1,3 @@
-/*jssc.querySelector('.jssc__type-link').onclick = function() {
-	jsscContentReplace(this);
-}*/
 jsscTempContent.querySelector('.jssc__type-link').onclick = function() {
 	jsscContentToggle(true);
 }
@@ -14,29 +11,27 @@ jssc.querySelector('.jssc__modal-close').onclick = function() {
 }
 
 jsscWaveContent.querySelector('.jssc__left-arrow').onclick = function() {
-	prevStep();
+	clearField('wave');
+	prevStep('wave');
 }
 
 jsscWaveContent.querySelector('.jssc__right-arrow').onclick = function() {
-	nextStep();
+	clearField('wave');
+	nextStep('wave');
 }
 
 jsscTempContent.querySelector('.jssc__left-arrow').onclick = function() {
+	clearField('temp');
 	prevStep('temp');
 }
 
 jsscTempContent.querySelector('.jssc__right-arrow').onclick = function() {
+	clearField('temp');
 	nextStep('temp');
 }
 
 jsscWaveContent.querySelector('.jssc__carriage').onmousedown = function() {
-	let inputError = jsscWaveContent.querySelector('.jssc__input-error'),
-		inputField = jsscWaveContent.querySelector('.jssc__input input');
-	if (inputError.classList.contains('jssc__input-error_active')) {
-		inputError.classList.remove('jssc__input-error_active');
-	}
-	inputError.innerHTML = 'Введите значение длины волны (в нм) вручную, или используйте селектор цвета.';
-	inputField.value = '';
+	clearField('wave')
 
 	jssc.style.cursor = 'none';
 	jssc.querySelector('.jssc__left-arrow').style.cursor = 'none';
@@ -48,13 +43,7 @@ jsscWaveContent.querySelector('.jssc__carriage').onmousedown = function() {
 }
 
 jsscTempContent.querySelector('.jssc__carriage').onmousedown = function() {
-	let inputError = jsscTempContent.querySelector('.jssc__input-error'),
-		inputField = jsscTempContent.querySelector('.jssc__input input');
-	if (inputError.classList.contains('.jssc__input-error_active')) {
-		inputError.classList.remove('.jssc__input-error_active');
-	}
-	inputError.innerHTML = 'Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.';
-	inputField.value = '';
+	clearField('temp');
 
 	jssc.style.cursor = 'none';
 	jssc.querySelector('.jssc__left-arrow').style.cursor = 'none';
@@ -75,43 +64,45 @@ jssc.onmouseup = function() {
 }
 
 jsscWaveContent.querySelector('.jssc__input input').oninput = function() {
-	let inputError = jsscWaveContent.querySelector('.jssc__input-error');
+	let inputError = jsscWaveContent.querySelector('.jssc__input-error'),
+		inputErrorSpan = inputError.querySelector('span');
 	if (isInputCorrect(this.value) === 'ok') {
 		setCarriage(getNearStep(this.value));
 		if (inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.remove('jssc__input-error_active');
 		}
-		inputError.innerHTML = 'Ближайшее существующее значение: ' + getNearStep(this.value);
+		inputErrorSpan.innerHTML = 'Ближайшее существующее значение: ' + getNearStep(this.value);
 	} else if (isInputCorrect(this.value) === 'empty') {
 		if (inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.remove('jssc__input-error_active');
 		}
-		inputError.innerHTML = 'Введите значение длины волны (в нм) вручную, или используйте селектор цвета.';
+		inputErrorSpan.innerHTML = 'Введите значение длины волны (в нм) вручную, или используйте селектор цвета.';
 	} else {
 		if (!inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.add('jssc__input-error_active');
 		}
-		inputError.innerHTML = isInputCorrect(this.value);
+		inputErrorSpan.innerHTML = isInputCorrect(this.value);
 	}
 }
 
 jsscTempContent.querySelector('.jssc__input input').oninput = function() {
-	let inputError = jsscTempContent.querySelector('.jssc__input-error');
+	let inputError = jsscTempContent.querySelector('.jssc__input-error'),
+		inputErrorSpan = inputError.querySelector('span');
 	if (isInputCorrect(this.value, 'temp') === 'ok') {
 		setCarriage(getNearStep(this.value, 'temp'), 'temp');
 		if (inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.remove('jssc__input-error_active');
 		}
-		inputError.innerHTML = 'Ближайшее существующее значение: ' + getNearStep(this.value, 'temp');
+		inputErrorSpan.innerHTML = 'Ближайшее существующее значение: ' + getNearStep(this.value, 'temp');
 	} else if (isInputCorrect(this.value, 'temp') === 'empty') {
 		if (inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.remove('jssc__input-error_active');
 		}
-		inputError.innerHTML = 'Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.';
+		inputErrorSpan.innerHTML = 'Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.';
 	} else {
 		if (!inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.add('jssc__input-error_active');
 		}
-		inputError.innerHTML = isInputCorrect(this.value, 'temp');
+		inputErrorSpan.innerHTML = isInputCorrect(this.value, 'temp');
 	}
 }

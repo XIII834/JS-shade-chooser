@@ -23,6 +23,9 @@ let jsscTempTemplate = '' +
 	'</div>' +
 '</div>' +
 '<div class="jssc__color-palette jssc__color-palette_temp">' +
+	'<div class="jssc__left-limit-position">' + 
+		'<div class="jssc__min-limit-value"><span></span></div>' +
+	'</div>' +
 	'<div class="jssc__carriage-wrapper">' +
 		'<div class="jssc__count"><span>400</span></div>' +
 		'<div class="jssc__left-arrow-wrapper">' + 
@@ -35,6 +38,9 @@ let jsscTempTemplate = '' +
 		'<div class="jssc__bottom-arrow-wrapper">' +
 			'<div class="jssc__bottom-arrow"></div>' +
 		'</div>' +
+	'</div>' +
+	'<div class="jssc__right-limit-position">' + 
+		'<div class="jssc__max-limit-value"><span></span></div>' +
 	'</div>' +
 '</div>' +
 '<div class="jssc__marking">' + 
@@ -55,7 +61,7 @@ let jsscTempTemplate = '' +
 '</div>' +
 '<div class="jssc__input">' +
 	'<input type="text" name="jssc__input" placeholder="Поле для ввода">' +
-	'<div class="jssc__input-error">Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.</div>' +
+	'<div class="jssc__input-error"><span>Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.</span></div>' +
 '</div>';
 
 let jsscWaveTemplate = '' +
@@ -67,6 +73,9 @@ let jsscWaveTemplate = '' +
 	'</div>' +
 '</div>' +
 '<div class="jssc__color-palette jssc__color-palette_wave">' +
+	'<div class="jssc__left-limit-position">' + 
+		'<div class="jssc__min-limit-value"><span></span></div>' +
+	'</div>' +
 	'<div class="jssc__carriage-wrapper">' +
 		'<div class="jssc__count"><span></span></div>' +
 		'<div class="jssc__left-arrow-wrapper">' + 
@@ -79,6 +88,9 @@ let jsscWaveTemplate = '' +
 		'<div class="jssc__bottom-arrow-wrapper">' +
 			'<div class="jssc__bottom-arrow"></div>' +
 		'</div>' +
+	'</div>' +
+	'<div class="jssc__right-limit-position">' + 
+		'<div class="jssc__max-limit-value"><span></span></div>' +
 	'</div>' +
 '</div>' +
 '<div class="jssc__marking">' + 
@@ -94,5 +106,5 @@ let jsscWaveTemplate = '' +
 '</div>' +
 '<div class="jssc__input">' +
 	'<input type="text" name="jssc__input" placeholder="Поле для ввода">' +
-	'<div class="jssc__input-error">Введите значение длины волны (в нм) вручную, или используйте селектор цвета.</div>' +
+	'<div class="jssc__input-error"><span>Введите значение длины волны (в нм) вручную, или используйте селектор цвета.</span></div>' +
 '</div>';

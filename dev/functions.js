@@ -18,7 +18,7 @@ function jsscToggle(strObj) {
 		stepsObj.wave = validValuesConverter(strObj.wave);
 	} else {
 
-		stepsObj.wave = validValuesConverter('400, 440, 550, 600, 650-660, 1000');
+		stepsObj.wave = validValuesConverter('0, 13, 110, 300, 400, 440-480, 500, 600, 700, 730, 740, 800, 900, 990, 1000');
 	}
 
 	if (strObj.temp !== undefined) {
@@ -26,7 +26,7 @@ function jsscToggle(strObj) {
 		stepsObj.temp = validValuesConverter(strObj.temp);
 	} else {
 
-		stepsObj.temp = validValuesConverter('5500-5550, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 20000');
+		stepsObj.temp = validValuesConverter('2200, 2500, 4000-4020, 6000, 6500, 7000, 8000, 8660, 9000, 10099, 13000, 14000, 15000, 19900, 20000');
 	}
 
 	if (getComputedStyle(jssc).display === 'none') {
@@ -41,6 +41,29 @@ function jsscToggle(strObj) {
 			paletteWaveBlockWidth = Math.round(paletteWidth / 8);
 			paletteTempBlockWidth = Math.floor(paletteWidth / 7) +
 									(Math.ceil(paletteWidth / 7) - Math.floor(paletteWidth / 7)) / 2;
+
+
+			let leftTempLimitPosition = jsscTempContent.querySelector('.jssc__left-limit-position');
+				leftTempLimitPosition.style.left = (getLeft(stepsObj.temp[0], 'temp') + carriageWidth / 2 - 2) + 'px';
+				leftTempLimitPosition.querySelector('span').innerHTML = 'MIN= ' + stepsObj.temp[0] + 'к';
+
+			let rightTempLimitPosition = jsscTempContent.querySelector('.jssc__right-limit-position');
+				rightTempLimitPosition.style.left = (getLeft(stepsObj.temp[stepsObj.temp.length - 1], 'temp') + carriageWidth / 2 - 2) + 'px';
+				rightTempLimitPosition.querySelector('span').innerHTML = 'MAX= ' + stepsObj.temp[stepsObj.temp.length - 1] + 'к';
+
+			let leftWaveLimitPosition = jsscWaveContent.querySelector('.jssc__left-limit-position');
+				leftWaveLimitPosition.style.left = (getLeft(stepsObj.wave[0], 'wave') + carriageWidth / 2 - 2) + 'px';
+				leftWaveLimitPosition.querySelector('span').innerHTML = 'MIN= ' + stepsObj.wave[0] + 'nm';
+				if (stepsObj.wave[0] > 625) {
+					leftWaveLimitPosition.style.backgroundColor = 'white';
+				}
+
+			let rightWaveLimitPosition = jsscWaveContent.querySelector('.jssc__right-limit-position');
+				rightWaveLimitPosition.style.left = (getLeft(stepsObj.wave[stepsObj.wave.length - 1], 'wave') + carriageWidth / 2 - 2) + 'px';
+				rightWaveLimitPosition.querySelector('span').innerHTML = 'MAX= ' + stepsObj.wave[stepsObj.wave.length - 1] + 'nm';
+				if (stepsObj.wave[stepsObj.wave.length - 1] > 625) {
+					rightWaveLimitPosition.style.backgroundColor = 'white';
+				}
 
 			setCarriage(stepsObj.wave[0]);
 			setCarriage(stepsObj.temp[0], 'temp');
@@ -355,4 +378,38 @@ function isInputCorrect(inputNum, paletteType) {
 	}
 
 	return 'ok';
+}
+
+function clearField(paletteType) {
+
+	paletteType = (paletteType !== undefined) ? paletteType : 'wave';
+
+	if (paletteType === 'temp') {
+
+		let inputError = jsscTempContent.querySelector('.jssc__input-error'),
+			inputErrorSpan = inputError.querySelector('span'),
+			inputField = jsscTempContent.querySelector('.jssc__input input');
+		if (inputError.classList.contains('.jssc__input-error_active')) {
+			inputError.classList.remove('.jssc__input-error_active');
+		}
+		inputErrorSpan.innerHTML = 'Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.';
+		inputField.value = '';
+		if (inputError.classList.contains('jssc__input-error_active')) {
+			inputError.classList.remove('jssc__input-error_active');
+		}
+
+	} else if (paletteType === 'wave') {
+
+		let inputError = jsscWaveContent.querySelector('.jssc__input-error'),
+			inputErrorSpan = inputError.querySelector('span'),
+			inputField = jsscWaveContent.querySelector('.jssc__input input');
+		if (inputError.classList.contains('jssc__input-error_active')) {
+			inputError.classList.remove('jssc__input-error_active');
+		}
+		inputErrorSpan.innerHTML = 'Введите значение длины волны (в нм) вручную, или используйте селектор цвета.';
+		inputField.value = '';
+		if (inputError.classList.contains('jssc__input-error_active')) {
+			inputError.classList.remove('jssc__input-error_active');
+		}
+	}
 }

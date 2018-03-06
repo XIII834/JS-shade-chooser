@@ -2,9 +2,9 @@
 
 var baseJsscTemplate = '' + '<div class="jssc__modal">' + '<div class="jssc__modal-close">' + '<svg version="1.1" baseProfile="full" width="20" height="20"' + 'xmlns="http://www.w3.org/2000/svg">' + '<line x1="0" x2="20" y1="0" y2="20" stroke="#9A9EA0"' + ' stroke-width="2"/>' + '<line x1="0" x2="20" y1="20" y2="0" stroke="#9A9EA0"' + ' stroke-width="2"/>' + '</svg>' + '</div>' + '<div class="jssc__content">' + '</div>' + '</div>';
 
-var jsscTempTemplate = '' + '<div class="jssc__hat">' + '<div class="jssc__title"><span>Температура, К</span></div>' + '<div class="jssc__type-link">' + '<span>Длина волны, λ</span>' + '<div class="jssc__type-link-img jssc__type-link-img_wave"></div>' + '</div>' + '</div>' + '<div class="jssc__color-palette jssc__color-palette_temp">' + '<div class="jssc__carriage-wrapper">' + '<div class="jssc__count"><span>400</span></div>' + '<div class="jssc__left-arrow-wrapper">' + '<div class="jssc__left-arrow"></div>' + '</div>' + '<div class="jssc__carriage"></div>' + '<div class="jssc__right-arrow-wrapper">' + '<div class="jssc__right-arrow"></div>' + '</div>' + '<div class="jssc__bottom-arrow-wrapper">' + '<div class="jssc__bottom-arrow"></div>' + '</div>' + '</div>' + '</div>' + '<div class="jssc__marking">' + '<span>2200к</span>' + '<span>2700-3000к</span>' + '<span>4000-4500к</span>' + '<span>4800к</span>' + '<span>5000-6000к</span>' + '<span>7000-7500к</span>' + '<span>10000к</span>' + '<span>20000к</span>' + '</div>' + '<div class="jssc__temp-sectors">' + '<span>свеча</span>' + '<span>лампа</span>' + '<span>день</span>' + '<span>небо</span>' + '</div>' + '<div class="jssc__input">' + '<input type="text" name="jssc__input" placeholder="Поле для ввода">' + '<div class="jssc__input-error">Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.</div>' + '</div>';
+var jsscTempTemplate = '' + '<div class="jssc__hat">' + '<div class="jssc__title"><span>Температура, К</span></div>' + '<div class="jssc__type-link">' + '<span>Длина волны, λ</span>' + '<div class="jssc__type-link-img jssc__type-link-img_wave"></div>' + '</div>' + '</div>' + '<div class="jssc__color-palette jssc__color-palette_temp">' + '<div class="jssc__left-limit-position">' + '<div class="jssc__min-limit-value"><span></span></div>' + '</div>' + '<div class="jssc__carriage-wrapper">' + '<div class="jssc__count"><span>400</span></div>' + '<div class="jssc__left-arrow-wrapper">' + '<div class="jssc__left-arrow"></div>' + '</div>' + '<div class="jssc__carriage"></div>' + '<div class="jssc__right-arrow-wrapper">' + '<div class="jssc__right-arrow"></div>' + '</div>' + '<div class="jssc__bottom-arrow-wrapper">' + '<div class="jssc__bottom-arrow"></div>' + '</div>' + '</div>' + '<div class="jssc__right-limit-position">' + '<div class="jssc__max-limit-value"><span></span></div>' + '</div>' + '</div>' + '<div class="jssc__marking">' + '<span>2200к</span>' + '<span>2700-3000к</span>' + '<span>4000-4500к</span>' + '<span>4800к</span>' + '<span>5000-6000к</span>' + '<span>7000-7500к</span>' + '<span>10000к</span>' + '<span>20000к</span>' + '</div>' + '<div class="jssc__temp-sectors">' + '<span>свеча</span>' + '<span>лампа</span>' + '<span>день</span>' + '<span>небо</span>' + '</div>' + '<div class="jssc__input">' + '<input type="text" name="jssc__input" placeholder="Поле для ввода">' + '<div class="jssc__input-error"><span>Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.</span></div>' + '</div>';
 
-var jsscWaveTemplate = '' + '<div class="jssc__hat">' + '<div class="jssc__title"><span>Длина волны, λ</span></div>' + '<div class="jssc__type-link">' + '<span>Температура, К</span>' + '<div class="jssc__type-link-img jssc__type-link-img_temp"></div>' + '</div>' + '</div>' + '<div class="jssc__color-palette jssc__color-palette_wave">' + '<div class="jssc__carriage-wrapper">' + '<div class="jssc__count"><span></span></div>' + '<div class="jssc__left-arrow-wrapper">' + '<div class="jssc__left-arrow"></div>' + '</div>' + '<div class="jssc__carriage"><span></span></div>' + '<div class="jssc__right-arrow-wrapper">' + '<div class="jssc__right-arrow"></div>' + '</div>' + '<div class="jssc__bottom-arrow-wrapper">' + '<div class="jssc__bottom-arrow"></div>' + '</div>' + '</div>' + '</div>' + '<div class="jssc__marking">' + '<span>УФ</span>' + '<span>380-440нм</span>' + '<span>440-485нм</span>' + '<span>485-500нм</span>' + '<span>500-565нм</span>' + '<span>565-590нм</span>' + '<span>590-625нм</span>' + '<span>625-740нм</span>' + '<span>ИК</span>' + '</div>' + '<div class="jssc__input">' + '<input type="text" name="jssc__input" placeholder="Поле для ввода">' + '<div class="jssc__input-error">Введите значение длины волны (в нм) вручную, или используйте селектор цвета.</div>' + '</div>';
+var jsscWaveTemplate = '' + '<div class="jssc__hat">' + '<div class="jssc__title"><span>Длина волны, λ</span></div>' + '<div class="jssc__type-link">' + '<span>Температура, К</span>' + '<div class="jssc__type-link-img jssc__type-link-img_temp"></div>' + '</div>' + '</div>' + '<div class="jssc__color-palette jssc__color-palette_wave">' + '<div class="jssc__left-limit-position">' + '<div class="jssc__min-limit-value"><span></span></div>' + '</div>' + '<div class="jssc__carriage-wrapper">' + '<div class="jssc__count"><span></span></div>' + '<div class="jssc__left-arrow-wrapper">' + '<div class="jssc__left-arrow"></div>' + '</div>' + '<div class="jssc__carriage"><span></span></div>' + '<div class="jssc__right-arrow-wrapper">' + '<div class="jssc__right-arrow"></div>' + '</div>' + '<div class="jssc__bottom-arrow-wrapper">' + '<div class="jssc__bottom-arrow"></div>' + '</div>' + '</div>' + '<div class="jssc__right-limit-position">' + '<div class="jssc__max-limit-value"><span></span></div>' + '</div>' + '</div>' + '<div class="jssc__marking">' + '<span>УФ</span>' + '<span>380-440нм</span>' + '<span>440-485нм</span>' + '<span>485-500нм</span>' + '<span>500-565нм</span>' + '<span>565-590нм</span>' + '<span>590-625нм</span>' + '<span>625-740нм</span>' + '<span>ИК</span>' + '</div>' + '<div class="jssc__input">' + '<input type="text" name="jssc__input" placeholder="Поле для ввода">' + '<div class="jssc__input-error"><span>Введите значение длины волны (в нм) вручную, или используйте селектор цвета.</span></div>' + '</div>';
 var jssc = document.createElement('div');
 jssc.insertAdjacentHTML('afterBegin', baseJsscTemplate);
 jssc.classList.add('jssc');
@@ -58,7 +58,7 @@ function jsscToggle(strObj) {
 		stepsObj.wave = validValuesConverter(strObj.wave);
 	} else {
 
-		stepsObj.wave = validValuesConverter('400, 440, 550, 600, 650-660, 1000');
+		stepsObj.wave = validValuesConverter('0, 13, 110, 300, 400, 440-480, 500, 600, 700, 730, 740, 800, 900, 990, 1000');
 	}
 
 	if (strObj.temp !== undefined) {
@@ -66,7 +66,7 @@ function jsscToggle(strObj) {
 		stepsObj.temp = validValuesConverter(strObj.temp);
 	} else {
 
-		stepsObj.temp = validValuesConverter('5500-5550, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 20000');
+		stepsObj.temp = validValuesConverter('2200, 2500, 4000-4020, 6000, 6500, 7000, 8000, 8660, 9000, 10099, 13000, 14000, 15000, 19900, 20000');
 	}
 
 	if (getComputedStyle(jssc).display === 'none') {
@@ -80,6 +80,28 @@ function jsscToggle(strObj) {
 
 			paletteWaveBlockWidth = Math.round(paletteWidth / 8);
 			paletteTempBlockWidth = Math.floor(paletteWidth / 7) + (Math.ceil(paletteWidth / 7) - Math.floor(paletteWidth / 7)) / 2;
+
+			var leftTempLimitPosition = jsscTempContent.querySelector('.jssc__left-limit-position');
+			leftTempLimitPosition.style.left = getLeft(stepsObj.temp[0], 'temp') + carriageWidth / 2 - 2 + 'px';
+			leftTempLimitPosition.querySelector('span').innerHTML = 'MIN= ' + stepsObj.temp[0] + 'к';
+
+			var rightTempLimitPosition = jsscTempContent.querySelector('.jssc__right-limit-position');
+			rightTempLimitPosition.style.left = getLeft(stepsObj.temp[stepsObj.temp.length - 1], 'temp') + carriageWidth / 2 - 2 + 'px';
+			rightTempLimitPosition.querySelector('span').innerHTML = 'MAX= ' + stepsObj.temp[stepsObj.temp.length - 1] + 'к';
+
+			var leftWaveLimitPosition = jsscWaveContent.querySelector('.jssc__left-limit-position');
+			leftWaveLimitPosition.style.left = getLeft(stepsObj.wave[0], 'wave') + carriageWidth / 2 - 2 + 'px';
+			leftWaveLimitPosition.querySelector('span').innerHTML = 'MIN= ' + stepsObj.wave[0] + 'nm';
+			if (stepsObj.wave[0] > 625) {
+				leftWaveLimitPosition.style.backgroundColor = 'white';
+			}
+
+			var rightWaveLimitPosition = jsscWaveContent.querySelector('.jssc__right-limit-position');
+			rightWaveLimitPosition.style.left = getLeft(stepsObj.wave[stepsObj.wave.length - 1], 'wave') + carriageWidth / 2 - 2 + 'px';
+			rightWaveLimitPosition.querySelector('span').innerHTML = 'MAX= ' + stepsObj.wave[stepsObj.wave.length - 1] + 'nm';
+			if (stepsObj.wave[stepsObj.wave.length - 1] > 625) {
+				rightWaveLimitPosition.style.backgroundColor = 'white';
+			}
 
 			setCarriage(stepsObj.wave[0]);
 			setCarriage(stepsObj.temp[0], 'temp');
@@ -386,9 +408,39 @@ function isInputCorrect(inputNum, paletteType) {
 
 	return 'ok';
 }
-/*jssc.querySelector('.jssc__type-link').onclick = function() {
-	jsscContentReplace(this);
-}*/
+
+function clearField(paletteType) {
+
+	paletteType = paletteType !== undefined ? paletteType : 'wave';
+
+	if (paletteType === 'temp') {
+
+		var inputError = jsscTempContent.querySelector('.jssc__input-error'),
+		    inputErrorSpan = inputError.querySelector('span'),
+		    inputField = jsscTempContent.querySelector('.jssc__input input');
+		if (inputError.classList.contains('.jssc__input-error_active')) {
+			inputError.classList.remove('.jssc__input-error_active');
+		}
+		inputErrorSpan.innerHTML = 'Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.';
+		inputField.value = '';
+		if (inputError.classList.contains('jssc__input-error_active')) {
+			inputError.classList.remove('jssc__input-error_active');
+		}
+	} else if (paletteType === 'wave') {
+
+		var _inputError = jsscWaveContent.querySelector('.jssc__input-error'),
+		    _inputErrorSpan = _inputError.querySelector('span'),
+		    _inputField = jsscWaveContent.querySelector('.jssc__input input');
+		if (_inputError.classList.contains('jssc__input-error_active')) {
+			_inputError.classList.remove('jssc__input-error_active');
+		}
+		_inputErrorSpan.innerHTML = 'Введите значение длины волны (в нм) вручную, или используйте селектор цвета.';
+		_inputField.value = '';
+		if (_inputError.classList.contains('jssc__input-error_active')) {
+			_inputError.classList.remove('jssc__input-error_active');
+		}
+	}
+}
 jsscTempContent.querySelector('.jssc__type-link').onclick = function () {
 	jsscContentToggle(true);
 };
@@ -402,29 +454,27 @@ jssc.querySelector('.jssc__modal-close').onclick = function () {
 };
 
 jsscWaveContent.querySelector('.jssc__left-arrow').onclick = function () {
-	prevStep();
+	clearField('wave');
+	prevStep('wave');
 };
 
 jsscWaveContent.querySelector('.jssc__right-arrow').onclick = function () {
-	nextStep();
+	clearField('wave');
+	nextStep('wave');
 };
 
 jsscTempContent.querySelector('.jssc__left-arrow').onclick = function () {
+	clearField('temp');
 	prevStep('temp');
 };
 
 jsscTempContent.querySelector('.jssc__right-arrow').onclick = function () {
+	clearField('temp');
 	nextStep('temp');
 };
 
 jsscWaveContent.querySelector('.jssc__carriage').onmousedown = function () {
-	var inputError = jsscWaveContent.querySelector('.jssc__input-error'),
-	    inputField = jsscWaveContent.querySelector('.jssc__input input');
-	if (inputError.classList.contains('jssc__input-error_active')) {
-		inputError.classList.remove('jssc__input-error_active');
-	}
-	inputError.innerHTML = 'Введите значение длины волны (в нм) вручную, или используйте селектор цвета.';
-	inputField.value = '';
+	clearField('wave');
 
 	jssc.style.cursor = 'none';
 	jssc.querySelector('.jssc__left-arrow').style.cursor = 'none';
@@ -436,13 +486,7 @@ jsscWaveContent.querySelector('.jssc__carriage').onmousedown = function () {
 };
 
 jsscTempContent.querySelector('.jssc__carriage').onmousedown = function () {
-	var inputError = jsscTempContent.querySelector('.jssc__input-error'),
-	    inputField = jsscTempContent.querySelector('.jssc__input input');
-	if (inputError.classList.contains('.jssc__input-error_active')) {
-		inputError.classList.remove('.jssc__input-error_active');
-	}
-	inputError.innerHTML = 'Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.';
-	inputField.value = '';
+	clearField('temp');
 
 	jssc.style.cursor = 'none';
 	jssc.querySelector('.jssc__left-arrow').style.cursor = 'none';
@@ -463,44 +507,46 @@ jssc.onmouseup = function () {
 };
 
 jsscWaveContent.querySelector('.jssc__input input').oninput = function () {
-	var inputError = jsscWaveContent.querySelector('.jssc__input-error');
+	var inputError = jsscWaveContent.querySelector('.jssc__input-error'),
+	    inputErrorSpan = inputError.querySelector('span');
 	if (isInputCorrect(this.value) === 'ok') {
 		setCarriage(getNearStep(this.value));
 		if (inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.remove('jssc__input-error_active');
 		}
-		inputError.innerHTML = 'Ближайшее существующее значение: ' + getNearStep(this.value);
+		inputErrorSpan.innerHTML = 'Ближайшее существующее значение: ' + getNearStep(this.value);
 	} else if (isInputCorrect(this.value) === 'empty') {
 		if (inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.remove('jssc__input-error_active');
 		}
-		inputError.innerHTML = 'Введите значение длины волны (в нм) вручную, или используйте селектор цвета.';
+		inputErrorSpan.innerHTML = 'Введите значение длины волны (в нм) вручную, или используйте селектор цвета.';
 	} else {
 		if (!inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.add('jssc__input-error_active');
 		}
-		inputError.innerHTML = isInputCorrect(this.value);
+		inputErrorSpan.innerHTML = isInputCorrect(this.value);
 	}
 };
 
 jsscTempContent.querySelector('.jssc__input input').oninput = function () {
-	var inputError = jsscTempContent.querySelector('.jssc__input-error');
+	var inputError = jsscTempContent.querySelector('.jssc__input-error'),
+	    inputErrorSpan = inputError.querySelector('span');
 	if (isInputCorrect(this.value, 'temp') === 'ok') {
 		setCarriage(getNearStep(this.value, 'temp'), 'temp');
 		if (inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.remove('jssc__input-error_active');
 		}
-		inputError.innerHTML = 'Ближайшее существующее значение: ' + getNearStep(this.value, 'temp');
+		inputErrorSpan.innerHTML = 'Ближайшее существующее значение: ' + getNearStep(this.value, 'temp');
 	} else if (isInputCorrect(this.value, 'temp') === 'empty') {
 		if (inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.remove('jssc__input-error_active');
 		}
-		inputError.innerHTML = 'Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.';
+		inputErrorSpan.innerHTML = 'Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.';
 	} else {
 		if (!inputError.classList.contains('jssc__input-error_active')) {
 			inputError.classList.add('jssc__input-error_active');
 		}
-		inputError.innerHTML = isInputCorrect(this.value, 'temp');
+		inputErrorSpan.innerHTML = isInputCorrect(this.value, 'temp');
 	}
 };
 //# sourceMappingURL=all.js.map

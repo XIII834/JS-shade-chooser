@@ -85,7 +85,7 @@
 }
 .jssc .jssc__type-link-img_temp {
 	/* background-color: #FBF261; */
-	background: linear-gradient(-45deg, #DC841A, #F7C16B, #FFECC1, #FFFAEA, #E4F5FD, #92B9D6, #5D90BF, #0000A2)
+	background: linear-gradient(-45deg, #DC841A, #F7C16B, #FFECC1, #FFFAEA, #E4F5FD, #92B9D6, #5D90BF, #0000A2);
 }
 .jssc .jssc__type-link-img_wave {
 	/* background-color: #F93B1C; */
@@ -111,6 +111,32 @@
 	background: -webkit-gradient(linear, left top, right top, from(#000), color-stop(#7100C4), color-stop(#004DFF), color-stop(#00B8D9), color-stop(#00C43A), color-stop(#FFFF00), color-stop(#FF8C00), color-stop(#FF0000), to(#000));
 	background: linear-gradient(90deg, #000, #7100C4, #004DFF, #00B8D9, #00C43A, #FFFF00, #FF8C00, #FF0000, #000);
 }
+.jssc .jssc__min-limit-value,
+	.jssc .jssc__max-limit-value {
+	width: 100px;
+	height: 100px;
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	font-size: 13px;
+	font-weight: bold
+}
+.jssc .jssc__min-limit-value span, .jssc .jssc__max-limit-value span {
+	background-color: rgba(255, 255, 255, .6);
+}
+.jssc .jssc__min-limit-value {
+	margin-left: -16px;
+}
+.jssc .jssc__max-limit-value {
+	margin-left: 2px;
+}
+.jssc .jssc__left-limit-position,
+	.jssc .jssc__right-limit-position {
+	position: absolute;
+	height: 100px;
+	width: 4px;
+	background-color: red;
+	z-index: 0;
+}
 .jssc .jssc__carriage-wrapper {
 	width: 150px;
 	height: 100px;
@@ -123,7 +149,8 @@
 	    flex-wrap: wrap;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
-	        justify-content: space-between
+	        justify-content: space-between;
+	z-index: 101
 }
 .jssc .jssc__carriage-wrapper:active {
 	cursor: none;
@@ -266,7 +293,8 @@
 	padding: 10px;
 	border-radius: 7px 0 0 7px;
 	font-weight: bold;
-	width: 75%
+	width: 75%;
+	font-size: 13px
 }
 .jssc .jssc__input-error.jssc__input-error_active {
 	border-color: red;

@@ -71,7 +71,7 @@
 
 	& .jssc__type-link-img_temp {
 		/* background-color: #FBF261; */
-		background: linear-gradient(-45deg, #DC841A, #F7C16B, #FFECC1, #FFFAEA, #E4F5FD, #92B9D6, #5D90BF, #0000A2)
+		background: linear-gradient(-45deg, #DC841A, #F7C16B, #FFECC1, #FFFAEA, #E4F5FD, #92B9D6, #5D90BF, #0000A2);
 	}
 
 	& .jssc__type-link-img_wave {
@@ -100,6 +100,35 @@
 		background: linear-gradient(90deg, #000, #7100C4, #004DFF, #00B8D9, #00C43A, #FFFF00, #FF8C00, #FF0000, #000);
 	}
 
+	& .jssc__min-limit-value,
+	& .jssc__max-limit-value {
+		width: 100px;
+		height: 100px;
+		transform: rotate(-90deg);
+		font-size: 13px;
+		font-weight: bold;
+		& span {
+			background-color: rgba(255, 255, 255, 0.6);
+		}
+	}
+
+	& .jssc__min-limit-value {
+		margin-left: -16px;
+	}
+	
+	& .jssc__max-limit-value {
+		margin-left: 2px;
+	}
+
+	& .jssc__left-limit-position,
+	& .jssc__right-limit-position {
+		position: absolute;
+		height: 100px;
+		width: 4px;
+		background-color: red;
+		z-index: 0;
+	}
+
 	& .jssc__carriage-wrapper {
 		width: 150px;
 		height: 100px;
@@ -108,6 +137,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		z-index: 101;
 		&:active {
 			cursor: none;
 		}
@@ -233,6 +263,7 @@
 		border-radius: 7px 0 0 7px;
 		font-weight: bold;
 		width: 75%;
+		font-size: 13px;
 		&.jssc__input-error_active {
 			border-color: red;
 			color: red;
