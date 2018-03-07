@@ -52,6 +52,23 @@
 		padding: 25px 0;
 	}
 
+	& .jssc__item-information {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		& .jssc__item-title {
+			color: gray;
+			text-decoration: none;
+			margin-bottom: 20px;
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+		& .jssc__item-article {
+			user-select: auto;
+		}
+	}
+
 	& .jssc__type-link {
 		display: flex;
 		justify-content: center;
@@ -270,3 +287,4 @@
 		}
 	}
 }
+

@@ -17,6 +17,10 @@ let baseJsscTemplate = '' +
 let jsscTempTemplate = '' +
 '<div class="jssc__hat">' +
 	'<div class="jssc__title"><span>Температура, К</span></div>' +
+	'<div class="jssc__item-information">' + 
+		'<a class="jssc__item-title" href="#"></a>' +
+		'<span class="jssc__item-article"></span>' +
+	'</div>' +
 	'<div class="jssc__type-link">' + 
 		'<span>Длина волны, λ</span>' +
 		'<div class="jssc__type-link-img jssc__type-link-img_wave"></div>' +
@@ -67,6 +71,10 @@ let jsscTempTemplate = '' +
 let jsscWaveTemplate = '' +
 '<div class="jssc__hat">' +
 	'<div class="jssc__title"><span>Длина волны, λ</span></div>' +
+	'<div class="jssc__item-information">' + 
+		'<a class="jssc__item-title" href="#"></a>' +
+		'<span class="jssc__item-article"></span>' +
+	'</div>' +
 	'<div class="jssc__type-link">' + 
 		'<span>Температура, К</span>' +
 		'<div class="jssc__type-link-img jssc__type-link-img_temp"></div>' +

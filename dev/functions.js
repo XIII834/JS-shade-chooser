@@ -9,24 +9,40 @@ function jsscContentToggle(isCurrentTemp) {
 	}
 }
 
-function jsscToggle(strObj) {
+function jsscToggle(objUnClick) {
 
-	strObj = strObj ? strObj : {};
+	if (arguments.length) {
+		if (objUnClick.dataset.wave !== undefined) {
 
-	if (strObj.wave !== undefined) {
+			stepsObj.wave = validValuesConverter(objUnClick.dataset.wave);
+		} else {
 
-		stepsObj.wave = validValuesConverter(strObj.wave);
-	} else {
+			stepsObj.wave = validValuesConverter('12, 13, 14, 150, 590, 620, 630');
+		}
 
-		stepsObj.wave = validValuesConverter('0, 13, 110, 300, 400, 440-480, 500, 600, 700, 730, 740, 800, 900, 990, 1000');
-	}
+		if (objUnClick.dataset.temp !== undefined) {
 
-	if (strObj.temp !== undefined) {
+			stepsObj.temp = validValuesConverter(objUnClick.dataset.temp);
+		} else {
 
-		stepsObj.temp = validValuesConverter(strObj.temp);
-	} else {
+			stepsObj.temp = validValuesConverter('2200', '2500', '3000', '5000', '10000', '20000');
+		}
 
-		stepsObj.temp = validValuesConverter('2200, 2500, 4000-4020, 6000, 6500, 7000, 8000, 8660, 9000, 10099, 13000, 14000, 15000, 19900, 20000');
+		if (objUnClick.dataset.itemTitle !== undefined) {
+
+			stepsObj.itemTitle = objUnClick.dataset.itemTitle;
+		} else {
+
+			stepsObj.itemTitle = '';
+		}
+
+		if (objUnClick.dataset.itemArticle !== undefined) {
+
+			stepsObj.itemArticle = objUnClick.dataset.itemArticle;
+		} else {
+
+			stepsObj.itemArticle = '';
+		}
 	}
 
 	if (getComputedStyle(jssc).display === 'none') {
@@ -65,7 +81,15 @@ function jsscToggle(strObj) {
 					rightWaveLimitPosition.style.backgroundColor = 'white';
 				}
 
-			setCarriage(stepsObj.wave[0]);
+			jsscTempContent.querySelector('.jssc__item-title').innerHTML =
+			jsscWaveContent.querySelector('.jssc__item-title').innerHTML =
+			'' + stepsObj.itemTitle;
+
+			jsscTempContent.querySelector('.jssc__item-article').innerHTML =
+			jsscWaveContent.querySelector('.jssc__item-article').innerHTML =
+			(stepsObj.itemArticle) ? 'Артикул: ' + stepsObj.itemArticle : '';
+
+			setCarriage(stepsObj.wave[0], 'wave');
 			setCarriage(stepsObj.temp[0], 'temp');
 		}
 

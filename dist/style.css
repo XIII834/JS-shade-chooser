@@ -62,6 +62,32 @@
 	border-bottom: solid 1px gray;
 	padding: 25px 0;
 }
+.jssc .jssc__item-information {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center
+}
+.jssc .jssc__item-information .jssc__item-title {
+	color: gray;
+	text-decoration: none;
+	margin-bottom: 20px
+}
+.jssc .jssc__item-information .jssc__item-title:hover {
+	opacity: 0.7;
+}
+.jssc .jssc__item-information .jssc__item-article {
+	-webkit-user-select: auto;
+	-moz-user-select: auto;
+	-ms-user-select: auto;
+	user-select: auto;
+}
 .jssc .jssc__type-link {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -300,3 +326,4 @@
 	border-color: red;
 	color: red;
 }
+

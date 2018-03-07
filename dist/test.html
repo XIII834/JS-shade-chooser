@@ -39,7 +39,13 @@
 
 	<p>Эта кнопка является любым элементом, при нажатии на который должна появляться палитра</p>
 	
-	<button onclick="jsscToggle({temp: '2200, 4000, 5000, 7500, 8000, 9000, 10000', wave: '0, 25, 31, 150, 260, 320, 350, 700'})">НАЖМИ</button>
+	<button
+	data-item-title="Лента такая то"
+	data-item-article="020120"
+	data-wave="420, 430, 500, 510-600"
+	data-temp="5000, 6000, 8000, 8100-8110, 8900"
+
+	onclick="jsscToggle(this)">НАЖМИ</button>
 
 <script src="all.js"></script>
 </body>

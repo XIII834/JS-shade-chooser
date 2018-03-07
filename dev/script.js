@@ -7,7 +7,7 @@ jsscWaveContent.querySelector('.jssc__type-link').onclick = function() {
 }
 
 jssc.querySelector('.jssc__modal-close').onclick = function() {
-	jsscToggle(true);
+	jsscToggle();
 }
 
 jsscWaveContent.querySelector('.jssc__left-arrow').onclick = function() {
