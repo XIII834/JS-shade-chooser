@@ -21,18 +21,21 @@
 	font-family: Arial;
 	z-index: 100
 }
+
 .jssc span {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 }
+
 .jssc .jssc__modal {
 	width: 60%;
 	height: auto;
 	background-color: white;
 	position: relative;
 }
+
 .jssc .jssc__modal-close {
 	width: 20px;
 	height: 20px;
@@ -41,14 +44,17 @@
 	right: 35px;
 	cursor: pointer
 }
+
 .jssc .jssc__modal-close:hover {
 	opacity: 0.6;
 }
+
 .jssc .jssc__content {
 	width: 80%;
 	height: auto;
 	margin: auto;
 }
+
 .jssc .jssc__hat {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -62,6 +68,7 @@
 	border-bottom: solid 1px gray;
 	padding: 25px 0;
 }
+
 .jssc .jssc__item-information {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -74,20 +81,24 @@
 	    -ms-flex-align: center;
 	        align-items: center
 }
+
 .jssc .jssc__item-information .jssc__item-title {
 	color: gray;
 	text-decoration: none;
 	margin-bottom: 20px
 }
+
 .jssc .jssc__item-information .jssc__item-title:hover {
 	opacity: 0.7;
 }
+
 .jssc .jssc__item-information .jssc__item-article {
 	-webkit-user-select: auto;
 	-moz-user-select: auto;
 	-ms-user-select: auto;
 	user-select: auto;
 }
+
 .jssc .jssc__type-link {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -100,24 +111,29 @@
 	        align-items: center;
 	cursor: pointer
 }
+
 .jssc .jssc__type-link:hover {
 	opacity: 0.8;
 }
+
 .jssc .jssc__type-link-img {
 	width: 45px;
 	height: 45px;
 	margin-left: 10px;
 	border-radius: 100px;
 }
+
 .jssc .jssc__type-link-img_temp {
 	/* background-color: #FBF261; */
 	background: linear-gradient(-45deg, #DC841A, #F7C16B, #FFECC1, #FFFAEA, #E4F5FD, #92B9D6, #5D90BF, #0000A2);
 }
+
 .jssc .jssc__type-link-img_wave {
 	/* background-color: #F93B1C; */
 	/* background: linear-gradient(45deg, #000 0%, #7100C4 44%, #004DFF 48.5%, #00B8D9 50%, #00C43A 56.5%, #FFFF00 59%, #FF8C00 62.5%, #FF0000 74%, #000 100%); */
 	background: linear-gradient(-45deg, #000, #7100C4, #004DFF, #00B8D9, #00C43A, #FFFF00, #FF8C00, #FF0000, #000);
 }
+
 .jssc .jssc__color-palette {
 	width: 100%;
 	height: 100px;
@@ -126,17 +142,20 @@
 	border-bottom: solid 2px gray;
 	position: relative;
 }
+
 .jssc .jssc__color-palette_temp {
 	/* background-color: #FBF261; */
 	background: -webkit-gradient(linear, left top, right top, from(#DC841A), color-stop(#F7C16B), color-stop(#FFECC1), color-stop(#FFFAEA), color-stop(#E4F5FD), color-stop(#92B9D6), color-stop(#5D90BF), to(#0000A2));
 	background: linear-gradient(90deg, #DC841A, #F7C16B, #FFECC1, #FFFAEA, #E4F5FD, #92B9D6, #5D90BF, #0000A2);
 }
+
 .jssc .jssc__color-palette_wave {
 	/* background-color: #F93B1C; */
 	/* background: linear-gradient(90deg, #000 0%, #7100C4 44%, #004DFF 48.5%, #00B8D9 50%, #00C43A 56.5%, #FFFF00 59%, #FF8C00 62.5%, #FF0000 74%, #000 100%); */
 	background: -webkit-gradient(linear, left top, right top, from(#000), color-stop(#7100C4), color-stop(#004DFF), color-stop(#00B8D9), color-stop(#00C43A), color-stop(#FFFF00), color-stop(#FF8C00), color-stop(#FF0000), to(#000));
 	background: linear-gradient(90deg, #000, #7100C4, #004DFF, #00B8D9, #00C43A, #FFFF00, #FF8C00, #FF0000, #000);
 }
+
 .jssc .jssc__min-limit-value,
 	.jssc .jssc__max-limit-value {
 	width: 100px;
@@ -146,15 +165,19 @@
 	font-size: 13px;
 	font-weight: bold
 }
+
 .jssc .jssc__min-limit-value span, .jssc .jssc__max-limit-value span {
 	background-color: rgba(255, 255, 255, .6);
 }
+
 .jssc .jssc__min-limit-value {
 	margin-left: -16px;
 }
+
 .jssc .jssc__max-limit-value {
 	margin-left: 2px;
 }
+
 .jssc .jssc__left-limit-position,
 	.jssc .jssc__right-limit-position {
 	position: absolute;
@@ -163,6 +186,7 @@
 	background-color: red;
 	z-index: 0;
 }
+
 .jssc .jssc__carriage-wrapper {
 	width: 150px;
 	height: 100px;
@@ -178,15 +202,18 @@
 	        justify-content: space-between;
 	z-index: 101
 }
+
 .jssc .jssc__carriage-wrapper:active {
 	cursor: none;
 }
+
 .jssc .jssc__count {
 	width: 100%;
 	text-align: center;
 	font-weight: bold;
 	color: gray;
 }
+
 .jssc .jssc__left-arrow-wrapper,
 	.jssc .jssc__right-arrow-wrapper {
 	width: 24px;
@@ -202,20 +229,24 @@
 	    -ms-flex-pack: end;
 	        justify-content: flex-end
 }
+
 .jssc .jssc__left-arrow-wrapper:active, .jssc .jssc__right-arrow-wrapper:active {
 	cursor: none;
 }
+
 .jssc .jssc__left-arrow,
 	.jssc .jssc__right-arrow,
 	.jssc .jssc__bottom-arrow {
 	width: 0;
 	height: 0;
 }
+
 .jssc .jssc__right-arrow-wrapper {
 	-webkit-box-align: end;
 	    -ms-flex-align: end;
 	        align-items: flex-end;
 }
+
 .jssc .jssc__left-arrow {
 	cursor: pointer;
 	border-top: solid 12px transparent;
@@ -223,6 +254,7 @@
 	border-left: 0;
 	border-bottom: solid 12px transparent;
 }
+
 .jssc .jssc__right-arrow {
 	cursor: pointer;
 	border-top: solid 12px transparent;
@@ -230,6 +262,7 @@
 	border-left: solid 24px rgba(150, 150, 150, 1);
 	border-bottom: solid 12px transparent;
 }
+
 .jssc .jssc__carriage {
 	cursor: -webkit-grab;
 	cursor: grab;
@@ -250,9 +283,11 @@
 	color: white;
 	font-weight: bold
 }
+
 .jssc .jssc__carriage:active {
 	cursor: none;
 }
+
 .jssc .jssc__bottom-arrow-wrapper {
 	width: 100%;
 	display: -webkit-box;
@@ -262,6 +297,7 @@
 	    -ms-flex-pack: center;
 	        justify-content: center;
 }
+
 .jssc .jssc__bottom-arrow {
 	border-top: solid 16px rgba(0, 0, 0, .5);
 	border-right: solid 8px transparent;
@@ -269,6 +305,7 @@
 	border-bottom: 0;
 	margin-top: -2px;
 }
+
 .jssc .jssc__marking {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -280,6 +317,7 @@
 	font-weight: bold;
 	padding: 10px 0;
 }
+
 .jssc .jssc__temp-sectors {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -293,6 +331,7 @@
 	border-top: solid 1px gray;
 	padding-top: 15px;
 }
+
 .jssc .jssc__input {
 	margin: 50px 0 0 0;
 	width: 100%;
@@ -304,6 +343,7 @@
 	        justify-content: space-between;
 	margin-bottom: 40px;
 }
+
 .jssc .jssc__input [name="jssc__input"] {
 	border: none;
 	border-radius: 0 7px 7px 0;
@@ -313,6 +353,7 @@
 	background-color: #AEBD9D;
 	text-align: center;
 }
+
 .jssc .jssc__input-error {
 	color: #aebd9d;
 	border: solid 1px #aebd9d;
@@ -322,7 +363,36 @@
 	width: 75%;
 	font-size: 13px
 }
+
 .jssc .jssc__input-error.jssc__input-error_active {
 	border-color: red;
 	color: red;
+}
+
+@media (max-width: 1024px) {
+	.jssc .jssc__modal {
+		width: 100vw;
+		height: 100vh;
+	}
+	.jssc .jssc__marking {
+		font-size: 1.5vw;
+	}
+	.jssc .jssc__item-information {
+		display: none;
+	}
+	.jssc .jssc__type-link, .jssc .jssc__title {
+		font-size: 1.5vw;
+	}
+	.jssc .jssc__modal-close {
+		right: 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	.jssc .jssc__type-link, .jssc .jssc__title {
+		font-size: 3vw;
+	}
+	.jssc .jssc__modal-close {
+		right: 10px;
+	}	
 }
