@@ -12,7 +12,7 @@ function jsscContentToggle(isCurrentTemp) {
 function jsscToggle(objUnClick) {
 
 	if (arguments.length) {
-		if ((objUnClick.dataset.wave !== undefined) && (objUnClick.dataset.wave !== '')) {
+		if ((objUnClick.dataset.wave !== undefined) && (objUnClick.dataset.wave !== '-')) {
 
 			stepsObj.wave = validValuesConverter(objUnClick.dataset.wave);
 		} else {
@@ -21,7 +21,7 @@ function jsscToggle(objUnClick) {
 			jsscTempContent.querySelector('.jssc__type-link').style.visibility = 'hidden';
 		}
 
-		if ((objUnClick.dataset.temp !== undefined) && (objUnClick.dataset.temp !== '')) {
+		if ((objUnClick.dataset.temp !== undefined) && (objUnClick.dataset.temp !== '-')) {
 
 			stepsObj.temp = validValuesConverter(objUnClick.dataset.temp);
 		} else {
@@ -58,7 +58,7 @@ function jsscToggle(objUnClick) {
 	if (getComputedStyle(jssc).display === 'none') {
 		jssc.style.display = 'flex';
 
-		if (!paletteWidth) {
+		/*if (true) {*/
 
 			paletteWidth = document.querySelector('.jssc__color-palette').offsetWidth;
 
@@ -69,26 +69,30 @@ function jsscToggle(objUnClick) {
 									(Math.ceil(paletteWidth / 7) - Math.floor(paletteWidth / 7)) / 2;
 
 
-			let leftTempLimitPosition = jsscTempContent.querySelector('.jssc__left-limit-position');
+			    leftTempLimitPosition = jsscTempContent.querySelector('.jssc__left-limit-position');
 				leftTempLimitPosition.style.left = (getLeft(stepsObj.temp[0], 'temp') + carriageWidth / 2 - 2) + 'px';
 				leftTempLimitPosition.querySelector('span').innerHTML = 'MIN= ' + stepsObj.temp[0] + 'к';
 
-			let rightTempLimitPosition = jsscTempContent.querySelector('.jssc__right-limit-position');
+				rightTempLimitPosition = jsscTempContent.querySelector('.jssc__right-limit-position');
 				rightTempLimitPosition.style.left = (getLeft(stepsObj.temp[stepsObj.temp.length - 1], 'temp') + carriageWidth / 2 - 2) + 'px';
 				rightTempLimitPosition.querySelector('span').innerHTML = 'MAX= ' + stepsObj.temp[stepsObj.temp.length - 1] + 'к';
 
-			let leftWaveLimitPosition = jsscWaveContent.querySelector('.jssc__left-limit-position');
+				leftWaveLimitPosition = jsscWaveContent.querySelector('.jssc__left-limit-position');
 				leftWaveLimitPosition.style.left = (getLeft(stepsObj.wave[0], 'wave') + carriageWidth / 2 - 2) + 'px';
 				leftWaveLimitPosition.querySelector('span').innerHTML = 'MIN= ' + stepsObj.wave[0] + 'nm';
 				if (stepsObj.wave[0] > 625) {
 					leftWaveLimitPosition.style.backgroundColor = 'white';
+				} else {
+					leftWaveLimitPosition.style.backgroundColor= 'red';
 				}
 
-			let rightWaveLimitPosition = jsscWaveContent.querySelector('.jssc__right-limit-position');
+				rightWaveLimitPosition = jsscWaveContent.querySelector('.jssc__right-limit-position');
 				rightWaveLimitPosition.style.left = (getLeft(stepsObj.wave[stepsObj.wave.length - 1], 'wave') + carriageWidth / 2 - 2) + 'px';
 				rightWaveLimitPosition.querySelector('span').innerHTML = 'MAX= ' + stepsObj.wave[stepsObj.wave.length - 1] + 'nm';
 				if (stepsObj.wave[stepsObj.wave.length - 1] > 625) {
 					rightWaveLimitPosition.style.backgroundColor = 'white';
+				} else {
+					rightWaveLimitPosition.style.backgroundColor = 'red';
 				}
 
 			jsscTempContent.querySelector('.jssc__item-title').innerHTML =
@@ -101,7 +105,7 @@ function jsscToggle(objUnClick) {
 
 			setCarriage(stepsObj.wave[0], 'wave');
 			setCarriage(stepsObj.temp[0], 'temp');
-		}
+		/*}*/
 
 	} else {
 		jssc.style.display = 'none';

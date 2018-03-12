@@ -16,7 +16,11 @@ var paletteWidth = void 0,
     paletteWaveBlockWidth = void 0,
     paletteTempBlockWidth = void 0,
     paletteFullWidth = void 0,
-    cursorPosition = null;
+    cursorPosition = null,
+    leftTempLimitPosition = void 0,
+    rightTempLimitPosition = void 0,
+    leftWaveLimitPosition = void 0,
+    rightWaveLimitPosition = void 0;
 
 var wavesRanges = [0, 410, 463, 493, 533, 578, 608, 683, 1000],
     gradientWaveRanges = ['000000', '7100C4', '004DFF', '00B8D9', '00C43A', 'FFFF00', 'FF8C00', 'FF0000', '000000'],
@@ -52,7 +56,7 @@ function jsscContentToggle(isCurrentTemp) {
 function jsscToggle(objUnClick) {
 
 	if (arguments.length) {
-		if (objUnClick.dataset.wave !== undefined && objUnClick.dataset.wave !== '') {
+		if (objUnClick.dataset.wave !== undefined && objUnClick.dataset.wave !== '-') {
 
 			stepsObj.wave = validValuesConverter(objUnClick.dataset.wave);
 		} else {
@@ -61,7 +65,7 @@ function jsscToggle(objUnClick) {
 			jsscTempContent.querySelector('.jssc__type-link').style.visibility = 'hidden';
 		}
 
-		if (objUnClick.dataset.temp !== undefined && objUnClick.dataset.temp !== '') {
+		if (objUnClick.dataset.temp !== undefined && objUnClick.dataset.temp !== '-') {
 
 			stepsObj.temp = validValuesConverter(objUnClick.dataset.temp);
 		} else {
@@ -98,44 +102,48 @@ function jsscToggle(objUnClick) {
 	if (getComputedStyle(jssc).display === 'none') {
 		jssc.style.display = 'flex';
 
-		if (!paletteWidth) {
+		/*if (true) {*/
 
-			paletteWidth = document.querySelector('.jssc__color-palette').offsetWidth;
+		paletteWidth = document.querySelector('.jssc__color-palette').offsetWidth;
 
-			carriageWidth = document.querySelector('.jssc__carriage-wrapper').offsetWidth;
+		carriageWidth = document.querySelector('.jssc__carriage-wrapper').offsetWidth;
 
-			paletteWaveBlockWidth = Math.round(paletteWidth / 8);
-			paletteTempBlockWidth = Math.floor(paletteWidth / 7) + (Math.ceil(paletteWidth / 7) - Math.floor(paletteWidth / 7)) / 2;
+		paletteWaveBlockWidth = Math.round(paletteWidth / 8);
+		paletteTempBlockWidth = Math.floor(paletteWidth / 7) + (Math.ceil(paletteWidth / 7) - Math.floor(paletteWidth / 7)) / 2;
 
-			var leftTempLimitPosition = jsscTempContent.querySelector('.jssc__left-limit-position');
-			leftTempLimitPosition.style.left = getLeft(stepsObj.temp[0], 'temp') + carriageWidth / 2 - 2 + 'px';
-			leftTempLimitPosition.querySelector('span').innerHTML = 'MIN= ' + stepsObj.temp[0] + 'к';
+		leftTempLimitPosition = jsscTempContent.querySelector('.jssc__left-limit-position');
+		leftTempLimitPosition.style.left = getLeft(stepsObj.temp[0], 'temp') + carriageWidth / 2 - 2 + 'px';
+		leftTempLimitPosition.querySelector('span').innerHTML = 'MIN= ' + stepsObj.temp[0] + 'к';
 
-			var rightTempLimitPosition = jsscTempContent.querySelector('.jssc__right-limit-position');
-			rightTempLimitPosition.style.left = getLeft(stepsObj.temp[stepsObj.temp.length - 1], 'temp') + carriageWidth / 2 - 2 + 'px';
-			rightTempLimitPosition.querySelector('span').innerHTML = 'MAX= ' + stepsObj.temp[stepsObj.temp.length - 1] + 'к';
+		rightTempLimitPosition = jsscTempContent.querySelector('.jssc__right-limit-position');
+		rightTempLimitPosition.style.left = getLeft(stepsObj.temp[stepsObj.temp.length - 1], 'temp') + carriageWidth / 2 - 2 + 'px';
+		rightTempLimitPosition.querySelector('span').innerHTML = 'MAX= ' + stepsObj.temp[stepsObj.temp.length - 1] + 'к';
 
-			var leftWaveLimitPosition = jsscWaveContent.querySelector('.jssc__left-limit-position');
-			leftWaveLimitPosition.style.left = getLeft(stepsObj.wave[0], 'wave') + carriageWidth / 2 - 2 + 'px';
-			leftWaveLimitPosition.querySelector('span').innerHTML = 'MIN= ' + stepsObj.wave[0] + 'nm';
-			if (stepsObj.wave[0] > 625) {
-				leftWaveLimitPosition.style.backgroundColor = 'white';
-			}
-
-			var rightWaveLimitPosition = jsscWaveContent.querySelector('.jssc__right-limit-position');
-			rightWaveLimitPosition.style.left = getLeft(stepsObj.wave[stepsObj.wave.length - 1], 'wave') + carriageWidth / 2 - 2 + 'px';
-			rightWaveLimitPosition.querySelector('span').innerHTML = 'MAX= ' + stepsObj.wave[stepsObj.wave.length - 1] + 'nm';
-			if (stepsObj.wave[stepsObj.wave.length - 1] > 625) {
-				rightWaveLimitPosition.style.backgroundColor = 'white';
-			}
-
-			jsscTempContent.querySelector('.jssc__item-title').innerHTML = jsscWaveContent.querySelector('.jssc__item-title').innerHTML = '' + stepsObj.itemTitle;
-
-			jsscTempContent.querySelector('.jssc__item-article').innerHTML = jsscWaveContent.querySelector('.jssc__item-article').innerHTML = stepsObj.itemArticle ? 'Артикул: ' + stepsObj.itemArticle : '';
-
-			setCarriage(stepsObj.wave[0], 'wave');
-			setCarriage(stepsObj.temp[0], 'temp');
+		leftWaveLimitPosition = jsscWaveContent.querySelector('.jssc__left-limit-position');
+		leftWaveLimitPosition.style.left = getLeft(stepsObj.wave[0], 'wave') + carriageWidth / 2 - 2 + 'px';
+		leftWaveLimitPosition.querySelector('span').innerHTML = 'MIN= ' + stepsObj.wave[0] + 'nm';
+		if (stepsObj.wave[0] > 625) {
+			leftWaveLimitPosition.style.backgroundColor = 'white';
+		} else {
+			leftWaveLimitPosition.style.backgroundColor = 'red';
 		}
+
+		rightWaveLimitPosition = jsscWaveContent.querySelector('.jssc__right-limit-position');
+		rightWaveLimitPosition.style.left = getLeft(stepsObj.wave[stepsObj.wave.length - 1], 'wave') + carriageWidth / 2 - 2 + 'px';
+		rightWaveLimitPosition.querySelector('span').innerHTML = 'MAX= ' + stepsObj.wave[stepsObj.wave.length - 1] + 'nm';
+		if (stepsObj.wave[stepsObj.wave.length - 1] > 625) {
+			rightWaveLimitPosition.style.backgroundColor = 'white';
+		} else {
+			rightWaveLimitPosition.style.backgroundColor = 'red';
+		}
+
+		jsscTempContent.querySelector('.jssc__item-title').innerHTML = jsscWaveContent.querySelector('.jssc__item-title').innerHTML = '' + stepsObj.itemTitle;
+
+		jsscTempContent.querySelector('.jssc__item-article').innerHTML = jsscWaveContent.querySelector('.jssc__item-article').innerHTML = stepsObj.itemArticle ? 'Артикул: ' + stepsObj.itemArticle : '';
+
+		setCarriage(stepsObj.wave[0], 'wave');
+		setCarriage(stepsObj.temp[0], 'temp');
+		/*}*/
 	} else {
 		jssc.style.display = 'none';
 	}

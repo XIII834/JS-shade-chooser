@@ -5,7 +5,8 @@ let jssc = document.createElement('div');
 let stepsObj = {};
 
 let paletteWidth, carriageWidth, paletteWaveBlockWidth,
-	paletteTempBlockWidth, paletteFullWidth, cursorPosition = null;
+	paletteTempBlockWidth, paletteFullWidth, cursorPosition = null,
+	leftTempLimitPosition, rightTempLimitPosition, leftWaveLimitPosition, rightWaveLimitPosition;
 
 let wavesRanges = [0, 410, 463, 493, 533, 578, 608, 683, 1000],
 	gradientWaveRanges = ['000000', '7100C4', '004DFF', '00B8D9', '00C43A', 'FFFF00', 'FF8C00', 'FF0000', '000000'],
