@@ -19,7 +19,7 @@ gulp.task('js', function() {
 	gulp.src(paths.js)
 	 .pipe(plumber())
 	 .pipe(sourcemaps.init())
-	 .pipe(concat('all.js'))
+	 .pipe(concat('jssc.js'))
 	 .pipe(babel({
 	 	presets: ['env']
 	 })) 
@@ -40,7 +40,7 @@ gulp.task('css', function() {
 	gulp.src(paths.css)
 	 .pipe(plumber())
 	 .pipe(postcss(plugins))
-	 .pipe(concat('style.css'))
+	 .pipe(concat('jssc.css'))
 	 .pipe(gulp.dest('dist'))
 });
 

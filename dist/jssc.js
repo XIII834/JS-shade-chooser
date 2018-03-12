@@ -52,20 +52,30 @@ function jsscContentToggle(isCurrentTemp) {
 function jsscToggle(objUnClick) {
 
 	if (arguments.length) {
-		if (objUnClick.dataset.wave !== undefined) {
+		if (objUnClick.dataset.wave !== undefined && objUnClick.dataset.wave !== '') {
 
 			stepsObj.wave = validValuesConverter(objUnClick.dataset.wave);
 		} else {
 
 			stepsObj.wave = validValuesConverter('12, 13, 14, 150, 590, 620, 630');
+			jsscTempContent.querySelector('.jssc__type-link').style.visibility = 'hidden';
 		}
 
-		if (objUnClick.dataset.temp !== undefined) {
+		if (objUnClick.dataset.temp !== undefined && objUnClick.dataset.temp !== '') {
 
 			stepsObj.temp = validValuesConverter(objUnClick.dataset.temp);
 		} else {
 
 			stepsObj.temp = validValuesConverter('2200', '2500', '3000', '5000', '10000', '20000');
+			jsscWaveContent.querySelector('.jssc__type-link').style.visibility = 'hidden';
+
+			if (jsscModal.contains(jsscTempContent)) {
+				jsscModal.removeChild(jsscTempContent);
+			}
+
+			if (!jsscModal.contains(jsscWaveContent)) {
+				jsscModal.appendChild(jsscWaveContent);
+			}
 		}
 
 		if (objUnClick.dataset.itemTitle !== undefined) {
@@ -368,19 +378,6 @@ function dragAndDropCarriage(cursor, paletteType) {
 	}
 }
 
-/**
-  * Функция использует закон смещения Вина
-  * для получения значения длины волны в нм
-  * из значения температуры в кельвинах 
-  * @param {number} kelvins - Температура в кельвинах
-  */
-function getWaveFromTemp(kelvins) {
-	/*	Постоянная Вина, изм. в м*К */
-	var b = 0.002898;
-
-	return b / kelvins;
-}
-
 function getNearStep(inputNum, paletteType) {
 
 	paletteType = paletteType !== undefined ? paletteType : 'wave';
@@ -569,4 +566,4 @@ jsscTempContent.querySelector('.jssc__input input').oninput = function () {
 		inputErrorSpan.innerHTML = isInputCorrect(this.value, 'temp');
 	}
 };
-//# sourceMappingURL=all.js.map
+//# sourceMappingURL=jssc.js.map
