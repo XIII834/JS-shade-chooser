@@ -12,21 +12,31 @@ function jsscContentToggle(isCurrentTemp) {
 function jsscToggle(objUnClick) {
 
 	if (arguments.length) {
-		if ((objUnClick.dataset.wave !== undefined) && (objUnClick.dataset.wave !== '-')) {
+		if ((objUnClick.dataset.wave !== undefined) && (objUnClick.dataset.wave !== '')) {
 
 			stepsObj.wave = validValuesConverter(objUnClick.dataset.wave);
+			jsscTempContent.querySelector('.jssc__type-link').style.visibility = 'visible';
 		} else {
 
-			stepsObj.wave = validValuesConverter('12, 13, 14, 150, 590, 620, 630');
+			stepsObj.wave = validValuesConverter('0');
 			jsscTempContent.querySelector('.jssc__type-link').style.visibility = 'hidden';
+
+			if (jsscModal.contains(jsscWaveContent)) {
+				jsscModal.removeChild(jsscWaveContent);
+			}
+
+			if (!jsscModal.contains(jsscTempContent)) {
+				jsscModal.appendChild(jsscTempContent);
+			}
 		}
 
-		if ((objUnClick.dataset.temp !== undefined) && (objUnClick.dataset.temp !== '-')) {
+		if ((objUnClick.dataset.temp !== undefined) && (objUnClick.dataset.temp !== '')) {
 
 			stepsObj.temp = validValuesConverter(objUnClick.dataset.temp);
+			jsscWaveContent.querySelector('.jssc__type-link').style.visibility = 'visible'
 		} else {
 
-			stepsObj.temp = validValuesConverter('2200', '2500', '3000', '5000', '10000', '20000');
+			stepsObj.temp = validValuesConverter('2200');
 			jsscWaveContent.querySelector('.jssc__type-link').style.visibility = 'hidden';
 
 			if (jsscModal.contains(jsscTempContent)) {
@@ -52,6 +62,14 @@ function jsscToggle(objUnClick) {
 		} else {
 
 			stepsObj.itemArticle = '';
+		}
+
+		if (objUnClick.dataset.itemTitleLink !== undefined) {
+
+			stepsObj.itemTitleLink = objUnClick.dataset.itemTitleLink;
+		} else {
+
+			stepsObj.itemTitleLink = '#';
 		}
 	}
 
@@ -99,6 +117,10 @@ function jsscToggle(objUnClick) {
 			jsscWaveContent.querySelector('.jssc__item-title').innerHTML =
 			'' + stepsObj.itemTitle;
 
+			jsscTempContent.querySelector('.jssc__item-title').href =
+			jsscWaveContent.querySelector('.jssc__item-title').href =
+			'' + stepsObj.itemTitleLink;
+
 			jsscTempContent.querySelector('.jssc__item-article').innerHTML =
 			jsscWaveContent.querySelector('.jssc__item-article').innerHTML =
 			(stepsObj.itemArticle) ? 'Артикул: ' + stepsObj.itemArticle : '';
@@ -119,12 +141,23 @@ function validValuesConverter(str) {
 
 	arr.forEach(function(elem) {
 		if (~elem.indexOf('-')) {
-			for (let  i = parseInt(elem); i <= parseInt(elem.slice(elem.indexOf('-') + 1)); i++) {
-				resultArr.push(i);
+			if (parseInt(elem) < parseInt(elem.slice(elem.indexOf('-') + 1))) {
+				for (let  i = parseInt(elem); i <= parseInt(elem.slice(elem.indexOf('-') + 1)); i++) {
+					resultArr.push(i);
+				}
+			} else {
+				for (let  i = parseInt(elem.slice(elem.indexOf('-') + 1)); i <= parseInt(elem); i++) {
+					resultArr.push(i);
+				}
 			}
+			
 		} else {
 			resultArr.push(parseInt(elem));
 		}
+	});
+
+	resultArr = resultArr.sort(function(a, b) {
+		return a > b;
 	});
 
 	return resultArr;
