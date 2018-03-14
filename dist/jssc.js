@@ -58,7 +58,9 @@ function jsscToggle(objUnClick) {
 	if (arguments.length) {
 		if (objUnClick.dataset.wave !== undefined && objUnClick.dataset.wave !== '') {
 
-			stepsObj.wave = validValuesConverter(objUnClick.dataset.wave);
+			stepsObj.wave = validValuesConverter(objUnClick.dataset.wave).sort(function (a, b) {
+				return a - b;
+			});
 			jsscTempContent.querySelector('.jssc__type-link').style.visibility = 'visible';
 		} else {
 
@@ -76,7 +78,9 @@ function jsscToggle(objUnClick) {
 
 		if (objUnClick.dataset.temp !== undefined && objUnClick.dataset.temp !== '') {
 
-			stepsObj.temp = validValuesConverter(objUnClick.dataset.temp);
+			stepsObj.temp = validValuesConverter(objUnClick.dataset.temp).sort(function (a, b) {
+				return a - b;
+			});
 			jsscWaveContent.querySelector('.jssc__type-link').style.visibility = 'visible';
 		} else {
 
@@ -120,8 +124,6 @@ function jsscToggle(objUnClick) {
 	if (getComputedStyle(jssc).display === 'none') {
 		jssc.style.display = 'flex';
 
-		/*if (true) {*/
-
 		paletteWidth = document.querySelector('.jssc__color-palette').offsetWidth;
 
 		carriageWidth = document.querySelector('.jssc__carriage-wrapper').offsetWidth;
@@ -163,7 +165,6 @@ function jsscToggle(objUnClick) {
 
 		setCarriage(stepsObj.wave[0], 'wave');
 		setCarriage(stepsObj.temp[0], 'temp');
-		/*}*/
 	} else {
 		jssc.style.display = 'none';
 	}
@@ -350,8 +351,12 @@ function nextStep(paletteType) {
 	if (paletteType === 'temp') {
 
 		var currentPosition = stepsObj.temp.indexOf(parseInt(tempCarriage.querySelector('.jssc__count span').innerHTML));
-		if (currentPosition + 1 < stepsObj.temp.length) {
-			setCarriage(stepsObj.temp[currentPosition + 1], 'temp');
+		if (currentPosition + 100 < stepsObj.temp.length) {
+
+			setCarriage(stepsObj.temp[currentPosition + 100], 'temp');
+		} else {
+
+			setCarriage(stepsObj.temp[stepsObj.temp.length - 1], 'temp');
 		}
 	} else if (paletteType === 'wave') {
 
@@ -369,8 +374,12 @@ function prevStep(paletteType) {
 	if (paletteType === 'temp') {
 
 		var currentPosition = stepsObj.temp.indexOf(parseInt(tempCarriage.querySelector('.jssc__count span').innerHTML));
-		if (currentPosition - 1 >= 0) {
-			setCarriage(stepsObj.temp[currentPosition - 1], 'temp');
+		if (currentPosition - 100 >= 0) {
+
+			setCarriage(stepsObj.temp[currentPosition - 100], 'temp');
+		} else {
+
+			setCarriage(stepsObj.temp[0], 'temp');
 		}
 	} else if (paletteType === 'wave') {
 
