@@ -1,6 +1,6 @@
 'use strict';
 
-var baseJsscTemplate = '' + '<div class="jssc__modal">' + '<div class="jssc__modal-close">' + '<svg version="1.1" baseProfile="full" width="20" height="20"' + 'xmlns="http://www.w3.org/2000/svg">' + '<line x1="0" x2="20" y1="0" y2="20" stroke="#9A9EA0"' + ' stroke-width="2"/>' + '<line x1="0" x2="20" y1="20" y2="0" stroke="#9A9EA0"' + ' stroke-width="2"/>' + '</svg>' + '</div>' + '<div class="jssc__content">' + '</div>' + '</div>';
+var baseJsscTemplate = '' + '<div class="jssc__modal">' + '<div class="jssc__modal-close">' + '<svg version="1.1" baseProfile="full" width="20" height="20"' + 'xmlns="http://www.w3.org/2000/svg">' + '<line x1="0" x2="20" y1="0" y2="20" stroke="#9A9EA0"' + ' stroke-width="2"/>' + '<line x1="0" x2="20" y1="20" y2="0" stroke="#9A9EA0"' + ' stroke-width="2"/>' + '</svg>' + '</div>' + '<div class="jssc__content">' + '</div>' + '<p class="jssc__ranges-error">К сожалению у данного товара отсутствует информация по его цветовым диапазонам...</p>' + '</div>';
 
 var jsscTempTemplate = '' + '<div class="jssc__hat">' + '<div class="jssc__title"><span>Температура, К</span></div>' + '<div class="jssc__item-information">' + '<a class="jssc__item-title" href="#"></a>' + '<span class="jssc__item-article"></span>' + '</div>' + '<div class="jssc__type-link">' + '<span>Длина волны, λ</span>' + '<div class="jssc__type-link-img jssc__type-link-img_wave"></div>' + '</div>' + '</div>' + '<div class="jssc__color-palette jssc__color-palette_temp">' + '<div class="jssc__left-limit-position">' + '<div class="jssc__min-limit-value"><span></span></div>' + '</div>' + '<div class="jssc__carriage-wrapper">' + '<div class="jssc__count"><span>400</span></div>' + '<div class="jssc__left-arrow-wrapper">' + '<div class="jssc__left-arrow"></div>' + '</div>' + '<div class="jssc__carriage"></div>' + '<div class="jssc__right-arrow-wrapper">' + '<div class="jssc__right-arrow"></div>' + '</div>' + '<div class="jssc__bottom-arrow-wrapper">' + '<div class="jssc__bottom-arrow"></div>' + '</div>' + '</div>' + '<div class="jssc__right-limit-position">' + '<div class="jssc__max-limit-value"><span></span></div>' + '</div>' + '</div>' + '<div class="jssc__marking">' + '<span>2200к</span>' + '<span>2700-3000к</span>' + '<span>4000-4500к</span>' + '<span>4800к</span>' + '<span>5000-6000к</span>' + '<span>7000-7500к</span>' + '<span>10000к</span>' + '<span>20000к</span>' + '</div>' + '<div class="jssc__temp-sectors">' + '<span>свеча</span>' + '<span>лампа</span>' + '<span>день</span>' + '<span>небо</span>' + '</div>' + '<div class="jssc__input">' + '<input type="text" name="jssc__input" placeholder="Поле для ввода">' + '<div class="jssc__input-error"><span>Введите значение температуры (в кельвинах) вручную, или используйте селектор цвета.</span></div>' + '</div>';
 
@@ -96,6 +96,11 @@ function jsscToggle(objUnClick) {
 			}
 		}
 
+		if (objUnClick.dataset.temp === objUnClick.dataset.wave) {
+			jssc.querySelector('.jssc__ranges-error').style.display = 'block';
+			jssc.querySelector('.jssc__content').style.display = 'none';
+		}
+
 		if (objUnClick.dataset.itemTitle !== undefined) {
 
 			stepsObj.itemTitle = objUnClick.dataset.itemTitle;
@@ -119,14 +124,18 @@ function jsscToggle(objUnClick) {
 
 			stepsObj.itemTitleLink = '#';
 		}
+	} else {
+
+		jssc.querySelector('.jssc__ranges-error').style.display = '';
+		jssc.querySelector('.jssc__content').style.display = '';
 	}
 
 	if (getComputedStyle(jssc).display === 'none') {
 		jssc.style.display = 'flex';
 
-		paletteWidth = document.querySelector('.jssc__color-palette').offsetWidth;
+		paletteWidth = jsscWaveContent.querySelector('.jssc__color-palette').offsetWidth !== 0 ? jsscWaveContent.querySelector('.jssc__color-palette').offsetWidth : jsscTempContent.querySelector('.jssc__color-palette').offsetWidth;
 
-		carriageWidth = document.querySelector('.jssc__carriage-wrapper').offsetWidth;
+		carriageWidth = jsscWaveContent.querySelector('.jssc__carriage-wrapper').offsetWidth !== 0 ? jsscWaveContent.querySelector('.jssc__carriage-wrapper').offsetWidth : jsscTempContent.querySelector('.jssc__carriage-wrapper').offsetWidth;
 
 		paletteWaveBlockWidth = Math.round(paletteWidth / 8);
 		paletteTempBlockWidth = Math.floor(paletteWidth / 7) + (Math.ceil(paletteWidth / 7) - Math.floor(paletteWidth / 7)) / 2;

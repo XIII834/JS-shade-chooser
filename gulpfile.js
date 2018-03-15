@@ -25,6 +25,7 @@ gulp.task('js', function() {
 	 })) 
 	 .pipe(sourcemaps.write('.'))
 	 .pipe(gulp.dest('dist'))
+	 .pipe(gulp.dest('D:\\Projects\\local.transistor.ru\\assets\\static\\jssc'))
 });
 
 gulp.task('css', function() {
@@ -42,6 +43,7 @@ gulp.task('css', function() {
 	 .pipe(postcss(plugins))
 	 .pipe(concat('jssc.css'))
 	 .pipe(gulp.dest('dist'))
+	 .pipe(gulp.dest('D:\\Projects\\local.transistor.ru\\assets\\static\\jssc'))
 });
 
 gulp.task('watcher', function() {

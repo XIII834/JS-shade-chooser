@@ -12,6 +12,7 @@ let baseJsscTemplate = '' +
 	'<div class="jssc__content">' +
 
 	'</div>' +
+	'<p class="jssc__ranges-error">К сожалению у данного товара отсутствует информация по его цветовым диапазонам...</p>' +
 '</div>';
 
 let jsscTempTemplate = '' +

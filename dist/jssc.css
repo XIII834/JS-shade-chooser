@@ -369,6 +369,12 @@
 	color: red;
 }
 
+.jssc .jssc__ranges-error {
+	display: none;
+	font-size: 30px;
+	text-align: center;
+}
+
 @media (max-width: 1024px) {
 	.jssc .jssc__modal {
 		width: 100vw;

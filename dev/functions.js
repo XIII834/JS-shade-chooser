@@ -52,6 +52,11 @@ function jsscToggle(objUnClick) {
 			}
 		}
 
+		if (objUnClick.dataset.temp === objUnClick.dataset.wave) {
+			jssc.querySelector('.jssc__ranges-error').style.display = 'block';
+			jssc.querySelector('.jssc__content').style.display = 'none';
+		}
+
 		if (objUnClick.dataset.itemTitle !== undefined) {
 
 			stepsObj.itemTitle = objUnClick.dataset.itemTitle;
@@ -75,14 +80,22 @@ function jsscToggle(objUnClick) {
 
 			stepsObj.itemTitleLink = '#';
 		}
+	} else {
+
+		jssc.querySelector('.jssc__ranges-error').style.display = '';
+		jssc.querySelector('.jssc__content').style.display = '';
 	}
 
 	if (getComputedStyle(jssc).display === 'none') {
 		jssc.style.display = 'flex';
 
-		paletteWidth = document.querySelector('.jssc__color-palette').offsetWidth;
+		paletteWidth = (jsscWaveContent.querySelector('.jssc__color-palette').offsetWidth !== 0) ?
+						jsscWaveContent.querySelector('.jssc__color-palette').offsetWidth :
+						jsscTempContent.querySelector('.jssc__color-palette').offsetWidth;
 
-		carriageWidth = document.querySelector('.jssc__carriage-wrapper').offsetWidth;
+		carriageWidth = (jsscWaveContent.querySelector('.jssc__carriage-wrapper').offsetWidth !== 0) ?
+						 jsscWaveContent.querySelector('.jssc__carriage-wrapper').offsetWidth :
+						 jsscTempContent.querySelector('.jssc__carriage-wrapper').offsetWidth;
 
 		paletteWaveBlockWidth = Math.round(paletteWidth / 8);
 		paletteTempBlockWidth = Math.floor(paletteWidth / 7) +
